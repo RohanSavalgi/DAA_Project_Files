@@ -13,9 +13,9 @@ class event
     }
 }
 class firstBuild
--{
+{
     public static void main(String[] args)
     {
-        Vector vec = new Vector();
+        //Vector vec = new Vector();
     }
 }
