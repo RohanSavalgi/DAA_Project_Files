@@ -1,7 +1,6 @@
 import java.util.*;
 class event
 {
-    enum 
     String name;
     int duration;
     void getData()
@@ -17,6 +16,6 @@ class firstBuild
 {
     public static void main(String[] args)
     {
-        vector vec = new vector();
+        Vector vec = new Vector();
     }
 }
