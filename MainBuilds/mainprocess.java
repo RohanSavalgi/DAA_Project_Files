@@ -16,7 +16,6 @@ class event
         duration = input.nextInt();
         System.out.println("Enter the Starting Time of the Event : ");
         startingTime = input.nextInt();
-        input.close();
     }
     void displayData()
     {
@@ -40,7 +39,7 @@ public class mainprocess
         {
             event thisEvent = new event();
             thisEvent.collectData();
-            day.add(thisEvent);
+            day.addElement(thisEvent);
 			choice = key.next().charAt(0);
         }
         
