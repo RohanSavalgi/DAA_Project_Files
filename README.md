@@ -50,3 +50,11 @@ backend op and front op
 
 
 links ------https://www.geeksforgeeks.org/fractional-knapsack-problem/
+
+interfaces
+exceptions 
+constructors 
+for each range 
+custom exceptions 
+
+
