@@ -1,4 +1,4 @@
-package InitialBuilds;
+package practiseFiles;
 import java.util.*;
 class vectorPushing
 {
@@ -17,5 +17,6 @@ class vectorPushing
 			choice = sc.next().charAt(0);
 		}
 		System.out.println(vec);
+		sc.close();
 	}
 }
