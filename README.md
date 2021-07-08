@@ -43,3 +43,10 @@ number of events
 output
 for given day 
 backend op and front op
+
+
+
+
+
+
+links ------https://www.geeksforgeeks.org/fractional-knapsack-problem/
