@@ -4,8 +4,10 @@ class event
 {
     String name;
     int duration;
-    int startingTime;
+    int proirity;
+    int mainPriority;
     static int eventsCounter = 0;
+    float ratio;
 
     event()
     {
@@ -19,14 +21,16 @@ class event
         name = input.next();
         System.out.println("Enter the duration of the Event : ");
         duration = input.nextInt();
-        System.out.println("Enter the Starting Time of the Event : ");
-        startingTime = input.nextInt();
+        System.out.println("Enter the Priority of the Event : ");
+        proirity = input.nextInt();
+        ratio = proirity/duration;
     }
     void displayData()
     {
         System.out.println("\nThe Event detail are : ");
         System.out.println("Name : " + name);
         System.out.println("Duration : " + duration);
-        System.out.println("Starting Time : " + startingTime);
+        System.out.println("Starting Time : " + proirity);
     }
+
 }
