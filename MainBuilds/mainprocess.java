@@ -1,4 +1,5 @@
 package MainBuilds;
+import java.text.SimpleDateFormat;
 import java.util.*;
 public class mainprocess
 {
@@ -14,6 +15,10 @@ public class mainprocess
         while (yesNoChoice == 'Y')
         {
             event thisEvent = new event();
+            if(event.eventsCounter == 1)
+            {
+                thisEvent.getStartingTime();
+            }
             thisEvent.collectData();
             singleDay.addElement(thisEvent);
             System.out.println("Do you wish to add an Event : (Y/N)");
@@ -25,7 +30,6 @@ public class mainprocess
             i.displayData();
         }
         System.out.println("Number of events : " + event.eventsCounter);
-        //thisDisplayData(minEvent(singleDay));
         keyboard.close();        
     }
     event minEvent(Vector<event> vec)
@@ -44,11 +48,4 @@ public class mainprocess
         }
         return minRatioEvent;
     }
-    // static void thisDisplayData(event displayEvent)
-    // {
-    //     System.out.println("\nThe Event detail are : ");
-    //     System.out.println("Name : " + displayEvent.name);
-    //     System.out.println("Duration : " + displayEvent.duration);
-    //     System.out.println("Starting Time : " + displayEvent.proirity);
-    // }
 }
