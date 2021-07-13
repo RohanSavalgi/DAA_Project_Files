@@ -5,15 +5,17 @@ class event
 {
     String name;
     int duration;
+    static int mainDuration;
     int dhh,dmm;
     int proirity;
-    int mainPriority;
+    static int mainPriority;
     static int eventsCounter = 0;
     float ratio;
     static Calendar startTime = Calendar.getInstance();
     Calendar eventStartTime = Calendar.getInstance();
     SimpleDateFormat commonDateFormat = new SimpleDateFormat("hh:mm a");
-
+    int flag = 0;
+    
     event()
     {
         eventsCounter++;
@@ -51,6 +53,8 @@ class event
         HH = input.nextInt();
         mm = input.nextInt();
         startTime.set(2021, 7, 12, HH , mm);
+        System.out.println("Enter the Total Duration : ");
+        mainDuration = input.nextInt();
     }
 
     void minuteConvertor()

@@ -2,9 +2,15 @@ package MainBuilds;
 import java.util.*;
 public class mainprocess
 {
+    public static Vector<event> singleDay = new Vector<event>();
+
+    public static Vector<event> passVector(Vector<event> passVector)
+    {
+        return(passVector);
+    }
     public static void main(String[] args)
     {
-        Vector<event> singleDay = new Vector<event>();
+        
         Scanner keyboard = new Scanner(System.in);
         char yesNoChoice;
 
@@ -29,8 +35,14 @@ public class mainprocess
             i.displayData();
         }
         System.out.println("Number of events : " + event.eventsCounter);
-        keyboard.close();        
+        keyboard.close();  
+        mainprocess.passVector(singleDay); 
+        
+        eventsFill.eventAllocator();
     }
+
+
+
     event minEvent(Vector<event> vec)
     {
         event minRatioEvent = null;
