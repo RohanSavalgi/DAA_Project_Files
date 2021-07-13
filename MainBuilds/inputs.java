@@ -27,7 +27,7 @@ class event
         System.out.println("Enter the duration of the Event (hh:mm): ");
         dhh= input.nextInt();
         dmm= input.nextInt();
-        eventStartTime = startTime;
+        eventStartTime.setTime(startTime.getTime());
         startTime.add(Calendar.HOUR,dhh);
         startTime.add(Calendar.MINUTE,dmm);
         minuteConvertor();
@@ -39,8 +39,9 @@ class event
     {
         System.out.println("\nThe Event detail are : ");
         System.out.println("Name : " + name);
+        System.out.println("Starting Time : " + commonDateFormat.format(eventStartTime.getTime()));
         System.out.println("Duration : " + duration);
-        System.out.println("Starting Time : " + proirity);
+        System.out.println("Priority : " + proirity);
     }
     void getStartingTime()
     {
@@ -50,7 +51,6 @@ class event
         HH = input.nextInt();
         mm = input.nextInt();
         startTime.set(2021, 7, 12, HH , mm);
-        //System.out.println(commonDateFormat.format(startTime.getTime()));
     }
 
     void minuteConvertor()
