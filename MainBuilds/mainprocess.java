@@ -40,23 +40,4 @@ public class mainprocess
         
         eventsFill.eventAllocator();
     }
-
-
-
-    event minEvent(Vector<event> vec)
-    {
-        event minRatioEvent = null;
-        for(event i : vec)
-        {
-            if(vec.get(0) == i)
-            {
-                minRatioEvent = vec.get(0);
-            }
-            else if (minRatioEvent.ratio > i.ratio)
-            {
-                minRatioEvent = i;
-            }
-        }
-        return minRatioEvent;
-    }
 }
