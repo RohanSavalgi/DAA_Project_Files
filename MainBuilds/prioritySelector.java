@@ -9,7 +9,7 @@ public class prioritySelector
         int counter = 1;
         for(event i = vecEvent.elementAt(counter);i != null ; counter++)
         { 
-            if(i.ratio < minObj.ratio && minObj.flag == 0)
+            if(i.ratio < minObj.ratio && i.flag == 0)
             {
                 minObj = i;
             } 
