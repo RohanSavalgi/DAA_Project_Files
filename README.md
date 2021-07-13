@@ -63,3 +63,9 @@ custom exceptions
 gui codes ---https://www.javatpoint.com/java-swing
 
 https://www.guru99.com/java-swing-gui.html
+
+https://www.geeksforgeeks.org/java-swing-jtable/
+
+https://www.codejava.net/java-se/swing/a-simple-jtable-example-for-display
+
+http://tutorials.jenkov.com/javafx/tableview.html
