@@ -3,18 +3,26 @@ import java.util.*;
 public class prioritySelector 
 {
     static event nextEvent(Vector<event> vecEvent)
-    {
+    {  
         event minObj =  new event();
-        minObj = vecEvent.elementAt(0);//vecEvent.elementAt(vecEvent.size() + 1)
-        int counter = 1;
-        for(event i = vecEvent.elementAt(counter);i != null ; counter++)
-        { 
-            if(i.ratio < minObj.ratio && i.flag == 0)
+        minObj = vecEvent.elementAt(0);
+        vecEvent.elementAt(0).flag = 1;
+        for(int i = 1; i < vecEvent.size();i++)
+        {
+            if(vecEvent.elementAt(i).flag == 0)
             {
-                minObj = i;
-            } 
+                if(vecEvent.elementAt(i).ratio < minObj.ratio)
+                {
+
+                    vecEvent.elementAt(i).flag = 1;
+                    minObj = vecEvent.elementAt(i);
+                }
+            }  
         }
-        minObj.flag = 1;
+        if(minObj != vecEvent.elementAt(0))
+        {
+            vecEvent.elementAt(0).flag = 0;
+        }
         return minObj;
     }
 }

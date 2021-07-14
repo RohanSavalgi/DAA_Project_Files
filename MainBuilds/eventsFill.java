@@ -1,20 +1,23 @@
 package MainBuilds;
+import java.util.*;
 public class eventsFill
 {
+    static Vector<event> doneEvent = new Vector<event>();
     static void eventAllocator()
     {
-        int currentPriority = 0;
-        int currentDuration = 0;
+        double currentPriority = 0;
+        double currentDuration = 0;
         //System.out.println("we will take the event to the next day ");
         event currentEvent = new event();
-        currentEvent = prioritySelector.nextEvent(mainprocess.singleDay);
-        
+        System.out.println("-----------Event Considered are : ---------------");
         while(currentDuration < event.mainDuration)
         {
+            currentEvent = prioritySelector.nextEvent(mainprocess.singleDay);
             if(currentEvent == null)
             {
                 break;
             }
+            currentEvent.displayData();
             if(currentDuration + currentEvent.duration <= event.mainDuration)
             {
                 currentDuration += currentEvent.duration;
@@ -22,11 +25,14 @@ public class eventsFill
             }
             else
             {
-                currentPriority += (currentEvent.ratio) * (event.mainDuration - currentEvent.duration);
+                currentPriority += ((currentEvent.ratio) * (event.mainDuration - currentEvent.duration));
+                System.out.println("Remaining Time occupied is :" + (event.mainDuration - currentEvent.duration));
                 currentDuration += (event.mainDuration - currentEvent.duration); 
             }
+            doneEvent.add(currentEvent);
+            
         }
-        System.out.println("priority " + currentPriority);
-        System.out.println("duration " + currentDuration);
+        System.out.println("Final priority " + currentPriority);
+        System.out.println("Final duration " + currentDuration);
     }
 }

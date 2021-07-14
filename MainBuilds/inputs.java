@@ -10,7 +10,7 @@ class event
     int proirity;
     static int mainPriority;
     static int eventsCounter = 0;
-    float ratio;
+    double ratio;
     static Calendar startTime = Calendar.getInstance();
     Calendar eventStartTime = Calendar.getInstance();
     SimpleDateFormat commonDateFormat = new SimpleDateFormat("hh:mm a");
@@ -44,6 +44,7 @@ class event
         System.out.println("Starting Time : " + commonDateFormat.format(eventStartTime.getTime()));
         System.out.println("Duration : " + duration);
         System.out.println("Priority : " + proirity);
+        System.out.println("Flag : " + flag);
     }
     void getStartingTime()
     {
