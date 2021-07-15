@@ -32,10 +32,10 @@ class event
         eventStartTime.setTime(startTime.getTime());
         startTime.add(Calendar.HOUR,dhh);
         startTime.add(Calendar.MINUTE,dmm);
-        minuteConvertor();
         System.out.println("Enter the Priority of the Event : ");
         proirity = input.nextInt();
-        ratio = proirity/duration;
+        minuteConvertor();
+        ratio = (double)proirity/(double)duration;
     }
     void displayData()
     {
@@ -44,6 +44,7 @@ class event
         System.out.println("Starting Time : " + commonDateFormat.format(eventStartTime.getTime()));
         System.out.println("Duration : " + duration);
         System.out.println("Priority : " + proirity);
+        System.out.println("Ratio : " + ratio);
         System.out.println("Flag : " + flag);
     }
     void getStartingTime()
@@ -58,15 +59,17 @@ class event
         mainDuration = input.nextInt();
     }
 
-    void minuteConvertor()
+    int minuteConvertor()
     {
+        duration = 0;
         if(dhh == 0)
         {
             duration = dmm;
         }
         else
         {
-            duration = ((dhh * 60) + dmm);
+            duration += ((dhh * 60) + dmm);
         }
+        return duration;
     }
 }
