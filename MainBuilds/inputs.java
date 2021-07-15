@@ -6,6 +6,7 @@ class event
     int flag;
     String name;
     int duration;
+    static int mhh,mmm; 
     static int mainDuration;
     int dhh,dmm;
     int proirity;
@@ -58,7 +59,17 @@ class event
         mm = input.nextInt();
         startTime.set(2021, 7, 12, HH , mm);
         System.out.println("Enter the Total Duration : ");
-        mainDuration = input.nextInt();
+        mhh = input.nextInt();
+        mmm = input.nextInt();
+        mainDuration = 0;
+        if(mhh == 0)
+        {
+            mainDuration = mmm;
+        }
+        else
+        {
+            mainDuration += ((mhh * 60) + mmm);
+        }
     }
 
     int minuteConvertor()

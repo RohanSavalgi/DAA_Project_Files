@@ -10,6 +10,7 @@ public class eventsFill
         //System.out.println("we will take the event to the next day ");
         event currentEvent = new event();
         System.out.println("\n\n-----------Event Considered are : ---------------");
+        System.out.println("main duration : " + event.mainDuration);
         while(currentDuration < event.mainDuration)
         {
             currentEvent = prioritySelector.nextEvent(mainprocess.singleDay);

@@ -23,7 +23,7 @@ public class mainprocess
             System.out.println("Do you wish to add an Event : (Y/N)");
 			yesNoChoice = keyboard.next().charAt(0);
         }
-        
+        sortTheVector();
         for(event  i : singleDay)
         {
             i.displayData();
@@ -31,7 +31,7 @@ public class mainprocess
         System.out.println("Number of events : " + event.eventsCounter);
         keyboard.close();  
 
-        sortTheVector();
+        
         eventsFill.eventAllocator();
     }
     public static void sortTheVector()
