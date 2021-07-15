@@ -25,8 +25,8 @@ public class eventsFill
             }
             else
             {
-                currentPriority += ((currentEvent.ratio) * (event.mainDuration - currentEvent.duration));
-                System.out.println("Remaining Time occupied is :" + (event.mainDuration - currentEvent.duration));
+                currentPriority += ((currentEvent.ratio) * (event.mainDuration - currentDuration));
+                System.out.println("Remaining Time occupied is :" + (event.mainDuration - currentDuration));
                 currentDuration += (event.mainDuration - currentEvent.duration); 
             }
             doneEvent.add(currentEvent);

@@ -32,7 +32,6 @@ public class mainprocess
         keyboard.close();  
 
         sortTheVector();
-        prioritySelector.nextEvent(singleDay);
         eventsFill.eventAllocator();
     }
     public static void sortTheVector()
@@ -55,7 +54,7 @@ public class mainprocess
                 singleDay.setElementAt(temp,i);
             }
         }
-        System.out.println("\n\nSOrted is : ");
+        System.out.println("\n\nSorted is : ");
         for(event i : singleDay)
         {
             i.displayData();

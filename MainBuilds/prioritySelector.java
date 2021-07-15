@@ -3,13 +3,14 @@ import java.util.*;
 public class prioritySelector 
 {
     static event nextEvent(Vector<event> vecEvent)
-    {  
-        for(int i = 0;i < vecEvent.size();i++)
+    {   
+        //System.out.println("Flag inside : " + vecEvent.elementAt(0).chosen);
+        for(event i : vecEvent)
         {
-            if(vecEvent.elementAt(i).flag == 0)
+            if(i.flag == 0)
             {
-                vecEvent.elementAt(i).flag = 1;
-                return vecEvent.elementAt(i);
+                i.flag = 1;
+                return i;
             }
         }
         return null;

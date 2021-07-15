@@ -3,6 +3,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 class event
 {
+    int flag;
     String name;
     int duration;
     static int mainDuration;
@@ -14,11 +15,12 @@ class event
     static Calendar startTime = Calendar.getInstance();
     Calendar eventStartTime = Calendar.getInstance();
     SimpleDateFormat commonDateFormat = new SimpleDateFormat("hh:mm a");
-    int flag = 0;
+    
     
     event()
     {
         eventsCounter++;
+        flag = 0;
     }
 
     void collectData()
