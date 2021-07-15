@@ -16,7 +16,7 @@ public class mainprocess
             event thisEvent = new event();
             if(event.eventsCounter == 1)
             {
-                thisEvent.getStartingTime();
+                event.getStartingTime();
             }
             thisEvent.collectData();
             singleDay.addElement(thisEvent);

@@ -14,11 +14,14 @@ public class eventsFill
         while(currentDuration < event.mainDuration)
         {
             currentEvent = prioritySelector.nextEvent(mainprocess.singleDay);
+            
             if(currentEvent == null)
             {
                 break;
             }
+            setTimings(currentEvent);
             currentEvent.displayData();
+ 
             if(currentDuration + currentEvent.duration <= event.mainDuration)
             {
                 currentDuration += currentEvent.duration;
@@ -26,14 +29,21 @@ public class eventsFill
             }
             else
             {
-                currentPriority += ((currentEvent.ratio) * (event.mainDuration - currentDuration));
+                currentPriority += ((currentEvent.ratio) * (event.mainDuration - currentPriority));
                 System.out.println("Remaining Time occupied is :" + (event.mainDuration - currentDuration));
-                currentDuration += (event.mainDuration - currentEvent.duration); 
+                //currentDuration += (event.mainDuration - currentEvent.duration); 
+                currentDuration += (event.mainDuration - currentDuration);
             }
             doneEvent.add(currentEvent);
             
         }
         System.out.println("Final priority " + currentPriority);
         System.out.println("Final duration " + currentDuration);
+    }
+    static void setTimings(event eventOne)
+    {
+        eventOne.eventStartTime.setTime(event.startTime.getTime());
+        event.startTime.add(Calendar.HOUR,eventOne.dhh);
+        event.startTime.add(Calendar.MINUTE,eventOne.dmm);
     }
 }
