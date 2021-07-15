@@ -1,5 +1,9 @@
 package MainBuilds;
+public class weekTimeTable 
+{
+    static void multipleDay()
+    {
+        mainprocess.singleDayWork();
+    }
 
-public class weekTimeTable {
-    
 }
