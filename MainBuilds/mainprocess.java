@@ -3,12 +3,17 @@ import java.util.*;
 public class mainprocess
 {
     public static Vector<event> singleDay = new Vector<event>();
+    public static Vector<event> remainingEvents = new Vector<event>();
+    
     public static void main(String[] args)
     {
-        
+        weekTimeTable.multipleDay();
+    }
+    
+    static void singleDayBlock()
+    {
         Scanner keyboard = new Scanner(System.in);
         char yesNoChoice;
-
         System.out.println("Do you wish to add an Event : (Y/N)");
         yesNoChoice = keyboard.next().charAt(0);
         while (yesNoChoice == 'Y')
@@ -29,10 +34,28 @@ public class mainprocess
             i.displayData();
         }
         System.out.println("Number of events : " + event.eventsCounter);
-        keyboard.close();  
-
-        
+          
         eventsFill.eventAllocator();
+        System.out.println("\nDONE EVENTS ARE : ");
+        for(event i : eventsFill.doneEvent)
+        {
+            i.displayData();
+        }
+        eventsStorage.placeDay(eventsFill.doneEvent);
+        eventsFill.doneEvent.removeAllElements();
+        for(event i : singleDay)
+        {
+            if(i.flag == 0)
+            {
+                remainingEvents.addElement(i);
+            }
+        }
+        singleDay.removeAllElements();
+        for(event i : remainingEvents)
+        {
+            singleDay.add(i);
+        }
+        event.eventsCounter = 0;
     }
     public static void sortTheVector()
     {

@@ -34,7 +34,6 @@ public class eventsFill
                 currentDuration += (event.mainDuration - currentDuration);
             }
             doneEvent.add(currentEvent);
-            
         }
         System.out.println("Final priority " + currentPriority);
         System.out.println("Final duration " + currentDuration);
