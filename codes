@@ -52,3 +52,14 @@ public class mainprocess
     }
 }
 
+GUI - 
+1.welcome - icon,created,bg,continue
+2.calender,se ,currect time at the top,staring time and total duration for the whole day,name day,date,radio button for the next event to be added
+3.choose that day - template for one event
+-adding of the next event
+-name
+-duration
+-priority ratio
+-view page for that day or continue to the next day
+4.view the whole weeks tt.
+
