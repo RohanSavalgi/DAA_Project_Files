@@ -16,8 +16,7 @@ class event
     static Calendar startTime = Calendar.getInstance();
     Calendar eventStartTime = Calendar.getInstance();
     SimpleDateFormat commonDateFormat = new SimpleDateFormat("hh:mm a");
-    
-    
+
     event()
     {
         eventsCounter++;
@@ -30,11 +29,8 @@ class event
         System.out.println("Enter the NAME of the Event : ");
         name = input.next();
         System.out.println("Enter the duration of the Event (hh:mm): ");
-        dhh= input.nextInt();
-        dmm= input.nextInt();
-        // eventStartTime.setTime(startTime.getTime());
-        // startTime.add(Calendar.HOUR,dhh);
-        // startTime.add(Calendar.MINUTE,dmm);
+        dhh = input.nextInt();
+        dmm = input.nextInt();
         System.out.println("Enter the Priority of the Event : ");
         proirity = input.nextInt();
         minuteConvertor();
@@ -71,7 +67,6 @@ class event
             mainDuration += ((mhh * 60) + mmm);
         }
     }
-
     int minuteConvertor()
     {
         duration = 0;

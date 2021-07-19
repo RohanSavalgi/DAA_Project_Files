@@ -16,5 +16,4 @@ public class weekTimeTable
 			yesNoDay = mainKeyboard.next().charAt(0);
         }
     }
-    
 }
