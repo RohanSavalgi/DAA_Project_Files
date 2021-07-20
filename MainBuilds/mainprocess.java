@@ -23,11 +23,12 @@ public class mainprocess
             {
                 event.getStartingTime();
             }
-            thisEvent.collectData();
+            thisEvent.collectData(thisEvent);
             singleDay.addElement(thisEvent);
             System.out.println("Do you wish to add an Event : (Y/N)");
 			yesNoChoice = keyboard.next().charAt(0);
         }
+        priorityBucket.bucketProcessing();
         sortTheVector();
         for(event  i : singleDay)
         {

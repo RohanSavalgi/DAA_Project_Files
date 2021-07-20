@@ -23,7 +23,7 @@ class event
         flag = 0;
     }
 
-    void collectData()
+    void collectData(event thisEvent)
     {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the NAME of the Event : ");
@@ -31,10 +31,11 @@ class event
         System.out.println("Enter the duration of the Event (hh:mm): ");
         dhh = input.nextInt();
         dmm = input.nextInt();
-        System.out.println("Enter the Priority of the Event : ");
-        proirity = input.nextInt();
+        priorityBucket.priorityBucketSelector(thisEvent);
+        // System.out.println("Enter the Priority of the Event : ");
+        // proirity = input.nextInt();
         minuteConvertor();
-        ratio = (double)proirity/(double)duration;
+        // ratio = (double)proirity/(double)duration;
     }
     void displayData()
     {
