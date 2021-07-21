@@ -49,4 +49,15 @@ public class priorityBucket
             }
         }
     }
+    static public void ratioCalculator(Vector<Vector<event>> thisParameter)
+    {
+        for(int i = 0;i < 3;i++)
+        {
+            for(event j : thisParameter.elementAt(i))
+            {
+                j.ratio = (double)j.proirity/(double)j.duration;
+            }
+        }
+    }
+    
 }

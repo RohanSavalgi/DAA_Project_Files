@@ -29,6 +29,7 @@ public class mainprocess
 			yesNoChoice = keyboard.next().charAt(0);
         }
         priorityBucket.bucketProcessing();
+        priorityBucket.ratioCalculator(priorityBucket.mainBuckets);
         sortTheVector();
         for(event  i : singleDay)
         {
@@ -48,10 +49,13 @@ public class mainprocess
         {
             if(i.flag == 0)
             {
+                i.proirity = 0;
                 remainingEvents.addElement(i);
             }
         }
         singleDay.removeAllElements();
+        priorityBucket.mainBuckets.removeAllElements();
+        priorityBucket.mainPriority = 0;
         for(event i : remainingEvents)
         {
             singleDay.add(i);
