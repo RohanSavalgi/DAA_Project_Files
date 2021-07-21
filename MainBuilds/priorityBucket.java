@@ -18,7 +18,7 @@ public class priorityBucket
 
         
 
-        switch(bucketNumber)
+        switch(bucketNumber) 
         {
             case 1 : priorityBucket.bucket1.addElement(thisParameter);
             break;
@@ -59,5 +59,5 @@ public class priorityBucket
             }
         }
     }
-    
+
 }
