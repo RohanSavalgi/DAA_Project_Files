@@ -1,4 +1,4 @@
-package MainBuilds;
+
 import java.util.*;
 public class mainprocess
 {
@@ -36,7 +36,11 @@ public class mainprocess
             i.displayData();
         }
         System.out.println("Number of events : " + event.eventsCounter);
-          
+        
+        sortTheSingleVector(priorityBucket.bucket1);
+        sortTheSingleVector(priorityBucket.bucket2);
+        sortTheSingleVector(priorityBucket.bucket3);
+
         eventsFill.eventAllocator();
         System.out.println("\nDONE EVENTS ARE : ");
         for(event i : eventsFill.doneEvent)
@@ -55,6 +59,9 @@ public class mainprocess
         }
         singleDay.removeAllElements();
         priorityBucket.mainBuckets.removeAllElements();
+        priorityBucket.bucket1.removeAllElements();
+        priorityBucket.bucket2.removeAllElements();
+        priorityBucket.bucket3.removeAllElements();
         priorityBucket.mainPriority = 0;
         for(event i : remainingEvents)
         {
@@ -86,6 +93,27 @@ public class mainprocess
         for(event i : singleDay)
         {
             i.displayData();
+        }
+    }
+    public static void sortTheSingleVector(Vector<event> thisVector)
+    {
+        event temp = new event();
+        int minIndex = -1;
+        //sorting
+        for(int i = 0; i < thisVector.size() - 1;i++)
+        {
+            minIndex =i;
+            for(int j = i+1; j < thisVector.size();j++)
+            {
+                if(thisVector.elementAt(j).ratio < thisVector.elementAt(minIndex).ratio)
+                    minIndex = j;
+            }
+            if(thisVector.elementAt(minIndex) != thisVector.elementAt(i))
+            {
+                temp = thisVector.elementAt(minIndex);
+                thisVector.setElementAt(thisVector.elementAt(i),minIndex);
+                thisVector.setElementAt(temp,i);
+            }
         }
     }
 }

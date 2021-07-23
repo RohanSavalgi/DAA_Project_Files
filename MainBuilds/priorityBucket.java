@@ -1,10 +1,9 @@
-package MainBuilds;
 import java.util.*;
 public class priorityBucket
 {
-    static Vector<event> bucket1 = new Vector<event>();//highest prio
-    static Vector<event> bucket2 = new Vector<event>();//medium prio
-    static Vector<event> bucket3 = new Vector<event>();//lowest prio
+    public static Vector<event> bucket1 = new Vector<event>();//highest prio
+    public static Vector<event> bucket2 = new Vector<event>();//medium prio
+    public static Vector<event> bucket3 = new Vector<event>();//lowest prio
 
     static Vector<Vector<event>> mainBuckets = new Vector<Vector<event>>();
 
@@ -38,9 +37,11 @@ public class priorityBucket
         {
             for(event j : mainBuckets.elementAt(i))
             {
-                j.proirity = mainPriority++;
+                j.proirity = mainPriority;
+                mainPriority++; 
             }
         }
+
         for(int i = 0;i < 3;i++)
         {
             for(event j : mainBuckets.elementAt(i))

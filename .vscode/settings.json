@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
+        "gui_files",
         "GuiFiles",
-        "gui_files"
+        "MainBuilds"
     ]
 }
