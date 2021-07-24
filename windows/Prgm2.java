@@ -1,7 +1,3 @@
-package window;
-
-
-
 import java.awt.*; 
 import java.awt.event.*;
 import javax.swing.*;
@@ -26,7 +22,7 @@ public class Prgm2 extends JPanel {
     public Prgm2() {
     	
     	
-       
+    	setBackground(new Color(0,0,0,1));
     	
         //construct preComponents
         String[] jcomp8Items = {"MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"};
@@ -51,7 +47,7 @@ public class Prgm2 extends JPanel {
         jcomp7.setToolTipText ("Select the day you are working on ");
 
         //adjust size and set layout
-        setPreferredSize (new Dimension (750, 450));
+        setPreferredSize (new Dimension (700, 536));
         setLayout (null);
 
         //add components
@@ -83,12 +79,15 @@ public class Prgm2 extends JPanel {
     
 
 
-    public static void main (String[] args) {
-        JFrame frame = new JFrame ("MyPanel");
+    public static void main (String[] args) 
+    {
+    	JFrame frame = new JFrame ("Shcedular");
         frame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().add (new Prgm2 ());
-       
-        frame.pack();
+        frame.setSize(900,636);
+        frame.setContentPane(new JLabel(new ImageIcon("C:\\Users\\Rohan Savalgi\\OneDrive\\Pictures\\frontPage.jpeg")));
+        frame.setLayout(new FlowLayout());
+        frame.getContentPane().add (new Prgm2());
+        //frame.pack();
         frame.setVisible (true);
         
        
