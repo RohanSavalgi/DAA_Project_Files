@@ -58,11 +58,48 @@ public class mainprocess
             }
         }
         singleDay.removeAllElements();
+        //cleaning the buckets 
+        //pushing the 3 bucket events to bucket 2
         priorityBucket.mainBuckets.removeAllElements();
-        priorityBucket.bucket1.removeAllElements();
-        priorityBucket.bucket2.removeAllElements();
+        for(event i : priorityBucket.bucket3)
+        {
+            if(i.flag == 0)
+            {
+                priorityBucket.tempBucket2.addElement(i);
+            }
+        }
         priorityBucket.bucket3.removeAllElements();
-        priorityBucket.mainPriority = 0;
+        //pushing the 3 bucket events to bucket 2
+        for(event i : priorityBucket.bucket2)
+        {
+            if(i.flag == 0)
+            {
+                priorityBucket.tempBucket1.addElement(i);
+            }
+        }
+        priorityBucket.bucket2.removeAllElements();
+        //pushing the 3 bucket events to bucket 2
+        for(event i : priorityBucket.bucket1)
+        {
+            if(i.flag == 0)
+            {
+                priorityBucket.tempBucket1.addElement(i);
+            }
+        }  
+        priorityBucket.bucket1.removeAllElements();
+        //adding elements back to buckets
+        for(event i : priorityBucket.tempBucket1)
+        {
+            i.proirity = 0;
+            priorityBucket.bucket1.addElement(i);
+        } 
+        for(event i : priorityBucket.bucket2)
+        {
+            i.proirity = 0;
+            priorityBucket.bucket2.addElement(i);
+        } 
+        
+        priorityBucket.mainPriority = 1;
         for(event i : remainingEvents)
         {
             singleDay.add(i);

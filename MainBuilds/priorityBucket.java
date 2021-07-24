@@ -5,6 +5,10 @@ public class priorityBucket
     public static Vector<event> bucket2 = new Vector<event>();//medium prio
     public static Vector<event> bucket3 = new Vector<event>();//lowest prio
 
+    public static Vector<event> tempBucket1 = new Vector<event>();//highest prio
+    public static Vector<event> tempBucket2 = new Vector<event>();//medium prio
+    public static Vector<event> tempBucket3 = new Vector<event>();//lowest prio
+
     static Vector<Vector<event>> mainBuckets = new Vector<Vector<event>>();
 
     static int mainPriority = 1;
