@@ -3,6 +3,6 @@
         "gui_files",
         "MainBuilds",
         "GuiFiles",
-        "window"
+        "windows"
     ]
 }
