@@ -1,8 +1,9 @@
 {
     "java.project.sourcePaths": [
+        "windows",
         "gui_files",
         "MainBuilds",
         "GuiFiles",
-        "windows"
+        ""
     ]
 }

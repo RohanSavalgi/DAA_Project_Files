@@ -1,4 +1,3 @@
-
 import java.util.*;
 public class mainprocess
 {
@@ -28,83 +27,7 @@ public class mainprocess
             System.out.println("Do you wish to add an Event : (Y/N)");
 			yesNoChoice = keyboard.next().charAt(0);
         }
-        priorityBucket.bucketProcessing();
-        priorityBucket.ratioCalculator(priorityBucket.mainBuckets);
-        sortTheVector();
-        for(event  i : singleDay)
-        {
-            i.displayData();
-        }
-        System.out.println("Number of events : " + event.eventsCounter);
-        
-        sortTheSingleVector(priorityBucket.bucket1);
-        sortTheSingleVector(priorityBucket.bucket2);
-        sortTheSingleVector(priorityBucket.bucket3);
-
-        eventsFill.eventAllocator();
-        System.out.println("\nDONE EVENTS ARE : ");
-        for(event i : eventsFill.doneEvent)
-        {
-            i.displayData();
-        }
-        eventsStorage.placeDay(eventsFill.doneEvent);
-        eventsFill.doneEvent.removeAllElements();
-        for(event i : singleDay)
-        {
-            if(i.flag == 0)
-            {
-                i.proirity = 0;
-                remainingEvents.addElement(i);
-            }
-        }
-        singleDay.removeAllElements();
-        //cleaning the buckets 
-        //pushing the 3 bucket events to bucket 2
-        priorityBucket.mainBuckets.removeAllElements();
-        for(event i : priorityBucket.bucket3)
-        {
-            if(i.flag == 0)
-            {
-                priorityBucket.tempBucket2.addElement(i);
-            }
-        }
-        priorityBucket.bucket3.removeAllElements();
-        //pushing the 3 bucket events to bucket 2
-        for(event i : priorityBucket.bucket2)
-        {
-            if(i.flag == 0)
-            {
-                priorityBucket.tempBucket1.addElement(i);
-            }
-        }
-        priorityBucket.bucket2.removeAllElements();
-        //pushing the 3 bucket events to bucket 2
-        for(event i : priorityBucket.bucket1)
-        {
-            if(i.flag == 0)
-            {
-                priorityBucket.tempBucket1.addElement(i);
-            }
-        }  
-        priorityBucket.bucket1.removeAllElements();
-        //adding elements back to buckets
-        for(event i : priorityBucket.tempBucket1)
-        {
-            i.proirity = 0;
-            priorityBucket.bucket1.addElement(i);
-        } 
-        for(event i : priorityBucket.bucket2)
-        {
-            i.proirity = 0;
-            priorityBucket.bucket2.addElement(i);
-        } 
-        
-        priorityBucket.mainPriority = 1;
-        for(event i : remainingEvents)
-        {
-            singleDay.add(i);
-        }
-        event.eventsCounter = 0;
+        processingAfterInputs();
     }
     public static void sortTheVector()
     {
@@ -152,5 +75,79 @@ public class mainprocess
                 thisVector.setElementAt(temp,i);
             }
         }
+    }
+    public static void processingAfterInputs()
+    {
+        priorityBucket.bucketProcessing();
+        priorityBucket.ratioCalculator(priorityBucket.mainBuckets);
+        for(event  i : singleDay)
+        {
+            i.displayData();
+        }
+        System.out.println("Number of events : " + event.eventsCounter);
+        
+        sortTheSingleVector(priorityBucket.bucket1);
+        sortTheSingleVector(priorityBucket.bucket2);
+        sortTheSingleVector(priorityBucket.bucket3);
+
+        eventsFill.eventAllocator();
+        System.out.println("\nDONE EVENTS ARE : ");
+        for(event i : eventsFill.doneEvent)
+        {
+            i.displayData();
+        }
+        eventsStorage.placeDay(eventsFill.doneEvent);
+        eventsFill.doneEvent.removeAllElements();
+        for(event i : singleDay)
+        {
+            if(i.flag == 0)
+            {
+                i.proirity = 0;
+                remainingEvents.addElement(i);
+            }
+        }
+        singleDay.removeAllElements();
+        priorityBucket.mainBuckets.removeAllElements();
+        for(event i : priorityBucket.bucket3)
+        {
+            if(i.flag == 0)
+            {
+                priorityBucket.tempBucket2.addElement(i);
+            }
+        }
+        priorityBucket.bucket3.removeAllElements();
+        for(event i : priorityBucket.bucket2)
+        {
+            if(i.flag == 0)
+            {
+                priorityBucket.tempBucket1.addElement(i);
+            }
+        }
+        priorityBucket.bucket2.removeAllElements();
+        for(event i : priorityBucket.bucket1)
+        {
+            if(i.flag == 0)
+            {
+                priorityBucket.tempBucket1.addElement(i);
+            }
+        }  
+        priorityBucket.bucket1.removeAllElements();
+        for(event i : priorityBucket.tempBucket1)
+        {
+            i.proirity = 0;
+            priorityBucket.bucket1.addElement(i);
+        } 
+        for(event i : priorityBucket.tempBucket2)
+        {
+            i.proirity = 0;
+            priorityBucket.bucket2.addElement(i);
+        }  
+        priorityBucket.mainPriority = 1;
+        for(event i : remainingEvents)
+        {
+            singleDay.add(i);
+        }
+
+        event.eventsCounter = 0;
     }
 }

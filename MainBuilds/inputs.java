@@ -1,4 +1,3 @@
-
 import java.text.SimpleDateFormat;
 import java.util.*;
 class event
@@ -27,15 +26,12 @@ class event
     {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the NAME of the Event : ");
-        name = input.next();
+        name = input.nextLine();
         System.out.println("Enter the duration of the Event (hh:mm): ");
         dhh = input.nextInt();
         dmm = input.nextInt();
         priorityBucket.priorityBucketSelector(thisEvent);
-        // System.out.println("Enter the Priority of the Event : ");
-        // proirity = input.nextInt();
         minuteConvertor();
-        // ratio = (double)proirity/(double)duration;
     }
     void displayData()
     {

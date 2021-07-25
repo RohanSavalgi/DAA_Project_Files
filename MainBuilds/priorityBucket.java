@@ -36,7 +36,6 @@ public class priorityBucket
     }
     static public void bucketProcessing()
     {
-        //returning the exact prio number
         for(int i = 0;i < 3;i++)
         {
             for(event j : mainBuckets.elementAt(i))

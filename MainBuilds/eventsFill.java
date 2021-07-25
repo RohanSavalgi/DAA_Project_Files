@@ -1,4 +1,3 @@
-
 import java.util.*;
 public class eventsFill
 {
@@ -7,13 +6,12 @@ public class eventsFill
     {
         double currentPriority = 0;
         double currentDuration = 0;
-        //System.out.println("we will take the event to the next day ");
         event currentEvent = new event();
         System.out.println("\n\n-----------Event Considered are : ---------------");
         System.out.println("main duration : " + event.mainDuration);
         while(currentDuration < event.mainDuration)
         {
-            currentEvent = prioritySelector.nextEvent(mainprocess.singleDay);
+            currentEvent = prioritySelector.nextEvent();
             
             if(currentEvent == null)
             {
