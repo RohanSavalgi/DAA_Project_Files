@@ -1,3 +1,4 @@
+
 import java.util.*;
 public class mainprocess
 {
@@ -15,6 +16,17 @@ public class mainprocess
         char yesNoChoice;
         System.out.println("Do you wish to add an Event : (Y/N)");
         yesNoChoice = keyboard.next().charAt(0);
+        if(yesNoChoice == 'N')
+        {
+            if(mainprocess.singleDay.size() != 0)
+            {
+                System.out.println("The remaining events which are not included are : ");
+                for(event i : singleDay)
+                {
+                    i.displayData();
+                }
+            }
+        }
         while (yesNoChoice == 'Y')
         {
             event thisEvent = new event();
@@ -25,8 +37,9 @@ public class mainprocess
             thisEvent.collectData(thisEvent);
             singleDay.addElement(thisEvent);
             System.out.println("Do you wish to add an Event : (Y/N)");
-			yesNoChoice = keyboard.next().charAt(0);
+            yesNoChoice = keyboard.next().charAt(0);
         }
+        
         processingAfterInputs();
     }
     public static void sortTheVector()
@@ -142,6 +155,16 @@ public class mainprocess
             i.proirity = 0;
             priorityBucket.bucket2.addElement(i);
         }  
+        System.out.println("B1 elements are : ");
+        for(event i : priorityBucket.bucket1)
+        {
+            i.displayData();
+        }
+        System.out.println("The remaining events are : ");
+        for(event i : remainingEvents)
+        {
+            i.displayData();
+        }
         priorityBucket.mainPriority = 1;
         for(event i : remainingEvents)
         {
