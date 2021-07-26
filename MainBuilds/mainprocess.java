@@ -125,6 +125,7 @@ public class mainprocess
         {
             if(i.flag == 0)
             {
+                
                 priorityBucket.tempBucket2.addElement(i);
             }
         }
@@ -168,9 +169,10 @@ public class mainprocess
         priorityBucket.mainPriority = 1;
         for(event i : remainingEvents)
         {
+            i.proirity = 0;
             singleDay.add(i);
         }
-
+        remainingEvents.removeAllElements();
         event.eventsCounter = 0;
     }
 }
