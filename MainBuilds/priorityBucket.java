@@ -30,18 +30,23 @@ public class priorityBucket
             case 3 : priorityBucket.bucket3.addElement(thisParameter);
             break;
         }
+    }
+    static void pushingToMainBuckets()
+    {
         priorityBucket.mainBuckets.addElement(bucket1);
         priorityBucket.mainBuckets.addElement(bucket2);
         priorityBucket.mainBuckets.addElement(bucket3);
     }
+        
     static public void bucketProcessing()
     {
+        mainPriority = 1;
         for(int i = 0;i < 3;i++)
         {
             for(event j : mainBuckets.elementAt(i))
             {
                 j.proirity = mainPriority;
-                mainPriority++; 
+                mainPriority = mainPriority + 1; 
             }
         }
 

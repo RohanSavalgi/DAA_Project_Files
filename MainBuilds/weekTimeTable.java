@@ -7,7 +7,7 @@ public class weekTimeTable
         {
             char yesNoDay;
             Scanner mainKeyboard = new Scanner(System.in);
-            priorityBucket.mainPriority = 1;
+            //priorityBucket.mainPriority = 1;
             mainprocess.singleDayBlock();
             System.out.println("Do you wish continue to the next day : (Y/N)");
             yesNoDay = mainKeyboard.next().charAt(0);
@@ -16,7 +16,7 @@ public class weekTimeTable
             {
                 while(yesNoDay == 'Y')
                 {
-                    priorityBucket.mainPriority = 0; 
+                    //priorityBucket.mainPriority = 0; 
                     mainprocess.singleDayBlock();     
                     System.out.println("Do you wish continue to the next day : (Y/N)");
                     yesNoDay = mainKeyboard.next().charAt(0);   

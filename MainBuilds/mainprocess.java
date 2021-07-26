@@ -1,4 +1,3 @@
-
 import java.util.*;
 public class mainprocess
 {
@@ -37,9 +36,12 @@ public class mainprocess
             thisEvent.collectData(thisEvent);
             singleDay.addElement(thisEvent);
             System.out.println("Do you wish to add an Event : (Y/N)");
-            yesNoChoice = keyboard.next().charAt(0);
+            yesNoChoice = keyboard.next().charAt(0);  
         }
-        
+        if(yesNoChoice == 'N')
+        {
+            priorityBucket.pushingToMainBuckets();
+        }
         processingAfterInputs();
     }
     public static void sortTheVector()
@@ -75,7 +77,7 @@ public class mainprocess
         //sorting
         for(int i = 0; i < thisVector.size() - 1;i++)
         {
-            minIndex =i;
+            minIndex = i;
             for(int j = i+1; j < thisVector.size();j++)
             {
                 if(thisVector.elementAt(j).ratio < thisVector.elementAt(minIndex).ratio)
@@ -121,31 +123,35 @@ public class mainprocess
         }
         singleDay.removeAllElements();
         priorityBucket.mainBuckets.removeAllElements();
-        for(event i : priorityBucket.bucket3)
-        {
-            if(i.flag == 0)
-            {
-                
-                priorityBucket.tempBucket2.addElement(i);
-            }
-        }
-        priorityBucket.bucket3.removeAllElements();
-        for(event i : priorityBucket.bucket2)
-        {
-            if(i.flag == 0)
-            {
-                priorityBucket.tempBucket1.addElement(i);
-            }
-        }
-        priorityBucket.bucket2.removeAllElements();
         for(event i : priorityBucket.bucket1)
         {
             if(i.flag == 0)
             {
+                i.proirity = 0;
                 priorityBucket.tempBucket1.addElement(i);
             }
         }  
         priorityBucket.bucket1.removeAllElements();
+        for(event i : priorityBucket.bucket2)
+        {
+            if(i.flag == 0)
+            {
+                i.proirity = 0;
+                priorityBucket.tempBucket1.addElement(i);
+            }
+        }
+        priorityBucket.bucket2.removeAllElements();
+        for(event i : priorityBucket.bucket3)
+        {
+            if(i.flag == 0)
+            {
+                i.proirity = 0;
+                priorityBucket.tempBucket2.addElement(i);
+            }
+        }
+        priorityBucket.bucket3.removeAllElements();
+        
+        
         for(event i : priorityBucket.tempBucket1)
         {
             i.proirity = 0;

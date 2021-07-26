@@ -9,7 +9,7 @@ class event
     static int mainDuration;
     int dhh,dmm;
     int proirity;
-    static int mainPriority;
+    //static int mainPriority;
     static int eventsCounter = 0;
     double ratio;
     static Calendar startTime = Calendar.getInstance();
