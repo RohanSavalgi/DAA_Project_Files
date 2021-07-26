@@ -15,7 +15,7 @@ JLabel calender;
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
 		setLayout(new BorderLayout());
-		setContentPane(new JLabel(new ImageIcon("F:\\4thsem\\project\\900_636.jpeg")));
+		setContentPane(new JLabel(new ImageIcon("Pictures\\900_636.jpeg")));
 		setLayout(new FlowLayout());
 		
 	setSize(1000,636);
