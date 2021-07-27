@@ -1,21 +1,22 @@
 package window;
-
-
-
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
 
-public class Page8 extends JPanel {
+public class page8 extends JPanel {
     private JLabel jcomp1;
     private JLabel jcomp2;
     private JButton jcomp3;
     private JButton jcomp4;
     private JButton jcomp5;
 
-    public Page8() {
+    public page8() 
+    {
+    	
+    	setBackground(new Color(0,0,0,1));
+    	
+    	
         //construct components
         jcomp1 = new JLabel ("FRIDAY");
         jcomp2 = new JLabel ("DO YOU WANT TO START A NEW EVENT ");
@@ -47,12 +48,13 @@ public class Page8 extends JPanel {
 
 
     public static void main (String[] args) {
-        JFrame frame = new JFrame ("MyPanel");
+    	JFrame frame = new JFrame ("Shcedular");
         frame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().add (new Page8());
-        frame.pack();
+        frame.setSize(900,636);
+        frame.setContentPane(new JLabel(new ImageIcon("C:\\Users\\dhanyata\\Desktop\\Rakshita S\\Mini Project\\New.jpg")));
+        frame.setLayout(new FlowLayout());
+        frame.getContentPane().add (new page8());
+        //frame.pack();
         frame.setVisible (true);
     }
 }
-
-

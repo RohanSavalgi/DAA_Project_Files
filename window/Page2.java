@@ -1,5 +1,4 @@
 package window;
-
 import java.awt.*; 
 import java.awt.event.*;
 import javax.swing.*;
@@ -7,7 +6,9 @@ import javax.swing.event.*;
 import java.time.format.DateTimeFormatter;  
 import java.time.LocalDateTime;   
 
-public class Page2 extends JPanel {
+public class page2 extends JPanel implements ActionListener
+{
+    static JFrame secondframe = new JFrame ("Shcedular");
     private JLabel jcomp1;
     private JLabel jcomp2;
     private JLabel jcomp3;
@@ -21,7 +22,7 @@ public class Page2 extends JPanel {
     private JButton jcomp11;
    
 
-    public Page2() {
+    public page2() {
     	
     	
     	setBackground(new Color(0,0,0,1));
@@ -38,7 +39,7 @@ public class Page2 extends JPanel {
         jcomp6 = new JTextField (5);
         jcomp7 = new JLabel ("DAY :");
         jcomp8 = new JComboBox (jcomp8Items);
-        jcomp9 = new JLabel ("DO YOU WANT TO START A NEW DAY");
+        jcomp9 = new JLabel ("DO YOU WANT TO START THIS DAY");
         jcomp10 = new JButton ("YES");
         jcomp11 = new JButton ("NO");
        
@@ -76,21 +77,27 @@ public class Page2 extends JPanel {
         jcomp9.setBounds (55, 230, 300, 25);
         jcomp10.setBounds (75 , 260, 100, 25);
         jcomp11.setBounds (175, 260, 100, 25);
+
+        //listener section
+        jcomp10.addActionListener(this);
        
     }
-    
 
-
-    public static void main (String[] args) 
+    public void actionPerformed(ActionEvent e)
     {
-    	JFrame frame = new JFrame ("Shcedular");
-        frame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
-        frame.setSize(900,636);
-        frame.setContentPane(new JLabel(new ImageIcon("F:\\4thsem\\project\\cover.jpeg")));
-        frame.setLayout(new FlowLayout());
-        frame.getContentPane().add (new Page2());
-        //frame.pack();
-        frame.setVisible (true);
+        page3.create();
+        secondframe.setVisible (false);
+    }
+    
+    static void page2create()
+    {
         
-       
-    }}
+        secondframe.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
+        secondframe.setSize(900,636);
+        secondframe.setContentPane(new JLabel(new ImageIcon("Pictures\\New.jpg")));
+        secondframe.setLayout(new FlowLayout());
+        secondframe.getContentPane().add (new page2());
+        //frame.pack();
+        secondframe.setVisible (true);
+    }
+}

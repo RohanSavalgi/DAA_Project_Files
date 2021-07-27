@@ -1,36 +1,32 @@
 package window;
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
 
-public class Page3 extends JPanel {
+public class page3 extends JPanel implements ActionListener
+{
+    static JFrame thirdframe = new JFrame ("third frame");
     private JLabel jcomp1;
-    private JTextField jcomp2;
-    private JLabel jcomp3;
-    private JTextField jcomp4;
-    private JLabel jcomp5;
-    private JComboBox jcomp6;
-    private JButton jcomp7;
-    private JButton jcomp8;
-
-    public Page3() {
-        //construct preComponents
-        String[] jcomp6Items = {"MOST IMPORTANT", "INTERMEDIATE", "LEAST IMPORTANT"};
-
+    private JLabel jcomp2;
+    private JButton jcomp3;
+    private JButton jcomp4;
+    private JButton jcomp5;
+    
+    public page3() 
+    {
+    	setBackground(new Color(0,0,0,1));
+    	
+    	
         //construct components
-        jcomp1 = new JLabel ("NAME OF THE EVENT :");
-        jcomp2 = new JTextField (10);
-        jcomp3 = new JLabel ("DURATION :");
-        jcomp4 = new JTextField (5);
-        jcomp5 = new JLabel ("TYPE OF EVENT :");
-        jcomp6 = new JComboBox (jcomp6Items);
-        jcomp7 = new JButton ("VIEW");
-        jcomp8 = new JButton ("NEXT");
+        jcomp1 = new JLabel ("MONDAY");
+        jcomp2 = new JLabel ("DO YOU WANT TO START A NEW EVENT ");
+        jcomp3 = new JButton ("YES");
+        jcomp4 = new JButton ("NO");
+        jcomp5 = new JButton ("VIEW");
 
         //set components properties
-        jcomp3.setToolTipText ("Time you want to spend on this event");
+        jcomp5.setToolTipText ("Press here to view whole day (all events)");
 
         //adjust size and set layout
         setPreferredSize (new Dimension (750, 450));
@@ -42,27 +38,44 @@ public class Page3 extends JPanel {
         add (jcomp3);
         add (jcomp4);
         add (jcomp5);
-        add (jcomp6);
-        add (jcomp7);
-        add (jcomp8);
 
         //set component bounds (only needed by Absolute Positioning)
-        jcomp1.setBounds (155, 80, 155, 25);
-        jcomp2.setBounds (330, 80, 190, 25);
-        jcomp3.setBounds (155, 150, 100, 25);
-        jcomp4.setBounds (330, 150, 100, 25);
-        jcomp5.setBounds (155, 220, 115, 25);
-        jcomp6.setBounds (330, 220, 160, 25);
-        jcomp7.setBounds (405, 325, 100, 25);
-        jcomp8.setBounds (550, 325, 100, 25);
+        jcomp1.setBounds (310, 10, 90, 30);
+        jcomp2.setBounds (225, 65, 250, 25);
+        jcomp3.setBounds (230, 130, 100, 25);
+        jcomp4.setBounds (350, 130, 100, 25);
+        jcomp5.setBounds (605, 355, 100, 25);
+
+        jcomp3.addActionListener(this);
+        jcomp4.addActionListener(this);
     }
 
+    public void actionPerformed(ActionEvent e)
+    {
+        if(e.getActionCommand().equals("YES"))
+        {
+            page4.create();
+            thirdframe.setVisible (false);
+        }
+        if(e.getActionCommand().equals("NO"))
+        {
+            page2.secondframe.setVisible (true);
+            thirdframe.setVisible (false);
+        }
 
-    public static void main (String[] args) {
-        JFrame frame = new JFrame ("MyPanel");
-        frame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().add (new Page3());
-        frame.pack();
-        frame.setVisible (true);
+            
+    }
+
+    public static void create()
+    {
+        
+        thirdframe.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
+        thirdframe.setSize(900,636);
+        thirdframe.setLocationRelativeTo(page2.secondframe);
+        thirdframe.setContentPane(new JLabel(new ImageIcon("Pictures\\New.jpg")));
+        thirdframe.setLayout(new FlowLayout());
+        thirdframe.getContentPane().add (new page3());
+        //frame.pack();
+        thirdframe.setVisible (true);
     }
 }
