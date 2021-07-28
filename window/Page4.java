@@ -2,7 +2,6 @@ package window;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
 
 public class page4 extends JPanel implements ActionListener
 {
@@ -11,7 +10,7 @@ public class page4 extends JPanel implements ActionListener
     private JLabel jcomp3;
     private JTextField jcomp4;
     private JLabel jcomp5;
-    private JComboBox jcomp6;
+    private JComboBox<String> jcomp6;
     private JButton jcomp7;
     private JButton jcomp8;
 
@@ -28,7 +27,7 @@ public class page4 extends JPanel implements ActionListener
         jcomp3 = new JLabel ("DURATION :");
         jcomp4 = new JTextField (5);
         jcomp5 = new JLabel ("TYPE OF EVENT :");
-        jcomp6 = new JComboBox (jcomp6Items);
+        jcomp6 = new JComboBox<String> (jcomp6Items);
         jcomp7 = new JButton ("VIEW");
         jcomp8 = new JButton ("NEXT");
 

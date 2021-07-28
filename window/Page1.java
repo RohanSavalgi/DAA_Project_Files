@@ -19,9 +19,9 @@ JLabel calender;
 		setLayout(new FlowLayout());
 		setSize(1000,636);
 		setSize(900,636);
-		Timer tm = new Timer(2000, ActionListener()) 
+		//Timer tm = new Timer(2000, ActionListener()) 
 		{
-			page1.setVisible(false);
+			//page1.setVisible(false);
 		}
 	}
 

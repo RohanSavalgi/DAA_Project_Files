@@ -35,8 +35,9 @@ class eventTimes
         HH = input.nextInt();
         mm = input.nextInt();
         startTime.set(2021, 7, 10, HH, mm);
-        StringBuffer sb = new StringBuffer("Date:");
+        //StringBuffer sb = new StringBuffer("Date:");
         System.out.println(commonDateFormats.format(startTime.getTime()));
+        input.close();
     }
     void getData()
     {
@@ -48,6 +49,7 @@ class eventTimes
         startTime.add(Calendar.HOUR,dhh);
         startTime.add(Calendar.MINUTE,dmm);
         //System.out.println("End timings : " + commonDateFormat.format(startTime.getTime()));
+        input.close();
     }
 }
 public class dateCalling

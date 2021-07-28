@@ -2,21 +2,21 @@ package window;
 import java.awt.*; 
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
-import java.time.format.DateTimeFormatter;  
-import java.time.LocalDateTime;   
+// import javax.swing.event.*;
+// import java.time.format.DateTimeFormatter;  
+// import java.time.LocalDateTime;   
 
 public class page2 extends JPanel implements ActionListener
 {
     static JFrame secondframe = new JFrame ("Shcedular");
     private JLabel jcomp1;
-    private JLabel jcomp2;
+    //private JLabel jcomp2;
     private JLabel jcomp3;
     private JTextField jcomp4;
     private JLabel jcomp5;
     private JTextField jcomp6;
     private JLabel jcomp7;
-    private JComboBox jcomp8;
+    private JComboBox<String> jcomp8;
     private JLabel jcomp9;
     private JButton jcomp10;
     private JButton jcomp11;
@@ -38,7 +38,7 @@ public class page2 extends JPanel implements ActionListener
         jcomp5 = new JLabel ("DURATION :");
         jcomp6 = new JTextField (5);
         jcomp7 = new JLabel ("DAY :");
-        jcomp8 = new JComboBox (jcomp8Items);
+        jcomp8 = new JComboBox<String> (jcomp8Items);
         jcomp9 = new JLabel ("DO YOU WANT TO START THIS DAY");
         jcomp10 = new JButton ("YES");
         jcomp11 = new JButton ("NO");
