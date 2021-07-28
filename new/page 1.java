@@ -1,12 +1,11 @@
-//package new;
+
 import javax.swing.*;
 import java.awt.*;
-//import java.awt.event.*;
 class page1 extends JFrame
 {
-JButton b1;
-JLabel l1;
-JLabel calender;
+	JButton b1;
+	JLabel l1;
+	JLabel calender;
 	public page1()
 	{
 		setTitle("Background Color for JFrame");
@@ -18,7 +17,7 @@ JLabel calender;
 		setContentPane(new JLabel(new ImageIcon("Pictures\\900_636.jpeg")));
 		setLayout(new FlowLayout());
 		
-	setSize(1000,636);
+		setSize(1000,636);
 		setSize(900,636);
 	}
 	public static void main(String args[])

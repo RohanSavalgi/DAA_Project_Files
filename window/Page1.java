@@ -4,9 +4,9 @@ import java.awt.*;
 import java.awt.event.*;
 class page1 extends JFrame implements ActionListener
 {
-JButton b1;
-JLabel l1;
-JLabel calender;
+	JButton b1;
+	JLabel l1;
+	JLabel calender;
 	public page1()
 	{
 		setTitle("Background Color for JFrame");
@@ -19,10 +19,18 @@ JLabel calender;
 		setLayout(new FlowLayout());
 		setSize(1000,636);
 		setSize(900,636);
-		//Timer tm = new Timer(2000, ActionListener()) 
+		int delay = 500;
+		
+		Timer timer = new Timer(delay,new ActionListener()
 		{
-			//page1.setVisible(false);
-		}
+			public void actionPerformed(ActionEvent e)
+			{
+				setVisible(false);
+				page2.page2create();
+				
+			}
+		});
+		timer.start();
 	}
 
 	static void create()

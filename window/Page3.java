@@ -2,11 +2,10 @@ package window;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-
 public class page3 extends JPanel implements ActionListener
 {
-    static JFrame thirdframe = new JFrame ("third frame");
-    private JLabel jcomp1;
+    static JFrame thirdframe = new JFrame ("Third Frame");
+    static JLabel jcomp1;
     private JLabel jcomp2;
     private JButton jcomp3;
     private JButton jcomp4;
@@ -15,10 +14,8 @@ public class page3 extends JPanel implements ActionListener
     public page3() 
     {
     	setBackground(new Color(0,0,0,1));
-    	
-    	
         //construct components
-        jcomp1 = new JLabel ("MONDAY");
+        jcomp1 = new JLabel ("DAY");
         jcomp2 = new JLabel ("DO YOU WANT TO START A NEW EVENT ");
         jcomp3 = new JButton ("YES");
         jcomp4 = new JButton ("NO");
@@ -48,7 +45,6 @@ public class page3 extends JPanel implements ActionListener
         jcomp3.addActionListener(this);
         jcomp4.addActionListener(this);
     }
-
     public void actionPerformed(ActionEvent e)
     {
         if(e.getActionCommand().equals("YES"))
@@ -60,14 +56,10 @@ public class page3 extends JPanel implements ActionListener
         {
             page2.secondframe.setVisible (true);
             thirdframe.setVisible (false);
-        }
-
-            
+        }      
     }
-
     public static void create()
     {
-        
         thirdframe.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
         thirdframe.setSize(900,636);
         thirdframe.setLocationRelativeTo(page2.secondframe);
