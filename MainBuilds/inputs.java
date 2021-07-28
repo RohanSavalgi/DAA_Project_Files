@@ -26,6 +26,7 @@ class event
     {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter the NAME of the Event : ");
+        //input.nextLine();
         name = input.nextLine();
         System.out.println("Enter the duration of the Event (hh:mm): ");
         dhh = input.nextInt();
