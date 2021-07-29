@@ -33,7 +33,7 @@ public class page3 extends JPanel implements ActionListener
         add (jcomp2);
         add (jcomp3);
         add (jcomp4);
-        add (jcomp5);
+        //add (jcomp5);
 
         //set component bounds (only needed by Absolute Positioning)
         jcomp1.setBounds (310, 10, 90, 30);
