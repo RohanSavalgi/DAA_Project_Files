@@ -111,6 +111,7 @@ public class page4 extends JPanel implements ActionListener
         fourframe.setSize(900,636);
         fourframe.getContentPane().add (new page4());
         //frame.pack();
+        fourframe.setLocationRelativeTo(null);
         fourframe.setVisible (true);
     } 
 }

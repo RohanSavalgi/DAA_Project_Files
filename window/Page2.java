@@ -2,11 +2,15 @@ package window;
 import java.awt.*; 
 import java.awt.event.*;
 import javax.swing.*;  
+import java.awt.geom.RoundRectangle2D;
+import java.awt.Font;
 
 public class page2 extends JPanel implements ActionListener
 {
     static JFrame secondframe = new JFrame ("Scheduler");
-    private JLabel jcomp1;
+    static JPanel topBar = new JPanel();
+    static JPanel sideBar = new JPanel();
+    static private JLabel jcomp1;
     //private JLabel jcomp2;
     private JLabel jcomp3;
     private JTextField jcomp4;
@@ -22,25 +26,58 @@ public class page2 extends JPanel implements ActionListener
 
     public page2() 
     {
-    	setBackground(new Color(0,0,0,1));
-    	
+        
+        setBackground(new Color(51, 71, 86));
+        //setBackground(new Color(0, 0, 0, 1));
         //construct preComponents
         String[] jcomp8Items = {"MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"};
-
-
         //construct components
-        jcomp1 = new JLabel ("CALENDER");
-        jcomp3 = new JLabel ("STARTING TIME :");
+        
+        jcomp3 = new JLabel ("Starting Time:");
+        jcomp3.setForeground(new Color(255, 76, 41));
+        jcomp3.setFont(new Font("Cambria", Font.PLAIN,23));
+
         jcomp4 = new JTextField ("00",5);
-        jcomp5 = new JLabel ("DURATION :");
+        jcomp4.setBackground(new Color(51, 71, 86));
+        jcomp4.setForeground(new Color(255, 76, 41));
+
+        jcomp5 = new JLabel ("Duration :");
+        jcomp5.setForeground(new Color(255, 76, 41));
+        jcomp5.setFont(new Font("Cambria", Font.PLAIN,23));
+
         jcomp6 = new JTextField ("00",5);
-        jcomp13 = new JTextField ("00",5);
-        jcomp12 = new JTextField ("00",5);
-        jcomp7 = new JLabel ("DAY :");
+        jcomp6.setBackground(new Color(51, 71, 86));
+        jcomp6.setForeground(new Color(255, 76, 41));
+
+        jcomp7 = new JLabel ("Day :");
+        jcomp7.setForeground(new Color(255, 76, 41));
+        jcomp7.setFont(new Font("Cambria", Font.PLAIN,23));
+
         jcomp8 = new JComboBox<String> (jcomp8Items);
-        jcomp9 = new JLabel ("DO YOU WANT TO START THIS DAY");
-        jcomp10 = new JButton ("YES");
-        jcomp11 = new JButton ("NO");
+        jcomp8.setBackground(new Color(51, 71, 86));
+        jcomp8.setForeground(new Color(255, 76, 41));
+
+        jcomp9 = new JLabel ("Do You Want To Start This Day");
+        jcomp9.setForeground(new Color(255, 76, 41));
+        jcomp9.setFont(new Font("Cambria", Font.PLAIN,23));
+
+        jcomp10 = new JButton ("Yes");
+        jcomp10.setFont(new Font("Cambria", Font.PLAIN,23));
+        jcomp10.setBackground(new Color(44, 57, 75));
+        jcomp10.setForeground(new Color(255, 76, 41));
+
+        jcomp11 = new JButton ("Close");
+        jcomp11.setFont(new Font("Cambria", Font.PLAIN,23));
+        jcomp11.setBackground(new Color(44, 57, 75));
+        jcomp11.setForeground(new Color(255, 76, 41));
+
+        jcomp12 = new JTextField ("00",5);
+        jcomp12.setBackground(new Color(51, 71, 86));
+        jcomp12.setForeground(new Color(255, 76, 41));
+
+        jcomp13 = new JTextField ("00",5);
+        jcomp13.setBackground(new Color(51, 71, 86));
+        jcomp13.setForeground(new Color(255, 76, 41));
        
         //set components properties
         jcomp3.setToolTipText ("When you are starting the day");
@@ -52,11 +89,12 @@ public class page2 extends JPanel implements ActionListener
         jcomp13.setToolTipText ("Minutes");
 
         //adjust size and set layout
-        setPreferredSize (new Dimension (700, 536));
+        setPreferredSize (new Dimension (600, 616));
+        
         setLayout (null);
 
         //add components
-        add (jcomp1);
+        //add (jcomp1);
         add (jcomp3);
         add (jcomp4);
         add (jcomp12);
@@ -70,26 +108,31 @@ public class page2 extends JPanel implements ActionListener
         add (jcomp13);
        
         //set component bounds (only needed by Absolute Positioning)
-        jcomp1.setBounds (155, -5, 115, 65);        
-        jcomp3.setBounds (55, 150, 110, 25);
-        jcomp4.setBounds (200, 150, 50, 25);
-        jcomp12.setBounds (260, 150, 50, 25);
-        jcomp5.setBounds (55, 190, 120, 25);
-        jcomp6.setBounds (200, 190, 50, 25);
-        jcomp13.setBounds (260, 190, 50, 25);
-        jcomp7.setBounds (55, 105, 100, 25);
-        jcomp8.setBounds (200, 105, 100, 25);
-        jcomp9.setBounds (55, 230, 300, 25);
-        jcomp10.setBounds (75 , 260, 100, 25);
-        jcomp11.setBounds (175, 260, 100, 25);
+               
+        jcomp7.setBounds (55, 100, 200, 25);
+        jcomp3.setBounds (55, 170, 200, 25);
+        jcomp8.setBounds (250, 100, 200, 25);
+        jcomp5.setBounds (55, 230, 200, 25);
+        jcomp4.setBounds (250, 170, 50, 25);
+        jcomp12.setBounds (310, 170, 50, 25);
+        
+        jcomp6.setBounds (250, 230, 50, 25);
+        jcomp13.setBounds (310, 230, 50, 25);
+        
+        
+        jcomp9.setBounds (55, 480, 400, 25);
+        jcomp10.setBounds (570 , 520, 100, 50);
+        jcomp11.setBounds (15 , 520, 100, 50);
+        
 
         //listener section
         jcomp10.addActionListener(this);
+        jcomp11.addActionListener(this);
     }
 
     public void actionPerformed(ActionEvent e)
     {
-        if(e.getActionCommand().equals("YES"))
+        if(e.getActionCommand().equals("Yes"))
         {
             page3.create();
             secondframe.setVisible (false);
@@ -110,20 +153,44 @@ public class page2 extends JPanel implements ActionListener
             System.out.println(compile.dMin);
             System.out.println(compile.day);
         }
-        if(e.getActionCommand().equals("NO"))
+        if(e.getActionCommand().equals("Close"))
         {
-            System.exit(0);
+            secondframe.dispose();
         }
     }
-    
     static void page2create()
     {
+        //Icon closeIcon = new ImageIcon("Pictures\\close.png");
+        topBar.setPreferredSize (new Dimension (900,50));
+        topBar.setBackground(new Color(8, 32, 50));
+        jcomp1 = new JLabel ("Calendar");
+        jcomp1.setFont(new Font("Castellar", Font.PLAIN,18));
+		jcomp1.setFont(jcomp1.getFont().deriveFont(25.0f));
+        jcomp1.setForeground(new Color(255, 76, 41));
+        jcomp1.setBounds (450, 10, 115, 65); 
+        page2.topBar.add(jcomp1);
+
+        sideBar.setPreferredSize (new Dimension (200, 636));
+        sideBar.setBackground(new Color(44, 57, 75));
+        sideBar.setBounds(0,0,200, 636);
+        sideBar.setLayout(new BorderLayout());
+        JLabel icon = new JLabel(new ImageIcon("Pictures\\icon.png"));
+        sideBar.add(icon,BorderLayout.CENTER);
+
+
         secondframe.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
         secondframe.setSize(900,636);
+        secondframe.setUndecorated(true);
+        secondframe.setShape(new RoundRectangle2D.Double(0,0, 900,636, 30,30));
         secondframe.setContentPane(new JLabel(new ImageIcon("Pictures\\New.jpg")));
-        secondframe.setLayout(new FlowLayout());
+        secondframe.setLayout(new BorderLayout());
+        secondframe.add(topBar,BorderLayout.NORTH);
+        secondframe.add(sideBar,BorderLayout.WEST);
         secondframe.getContentPane().add (new page2());
-        //frame.pack();
+        secondframe.setLocationRelativeTo(null);
         secondframe.setVisible (true);
+
+
+        
     }
 }
