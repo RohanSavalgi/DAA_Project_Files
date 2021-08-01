@@ -18,8 +18,8 @@ public class page3 extends JPanel implements ActionListener
     
     public page3() 
     {
-        setBackground(new Color(51, 71, 86));
-    	//setBackground(new Color(0,0,0,1));
+        //setBackground(new Color(51, 71, 86));
+    	setBackground(new Color(0,0,0,1));
         //construct components
         jcomp1 = new JLabel ("Day");
         jcomp1.setFont(new Font("Castellar", Font.PLAIN,18));

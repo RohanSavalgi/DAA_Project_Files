@@ -29,8 +29,8 @@ public class page4 extends JPanel implements ActionListener
     public page4() 
     {
     	
-    	//setBackground(new Color(0,0,0,1));
-        setBackground(new Color(51, 71, 86));
+    	setBackground(new Color(0,0,0,1));
+        //setBackground(new Color(51, 71, 86));
         //construct preComponents
         String[] jcomp6Items = {"Most Important", "Intermediate", "Least Impotant"};
         //construct components

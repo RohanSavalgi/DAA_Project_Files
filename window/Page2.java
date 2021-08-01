@@ -28,57 +28,57 @@ public class page2 extends JPanel implements ActionListener
     public page2() 
     {
         
-        setBackground(new Color(51, 71, 86));
-        //setBackground(new Color(0, 0, 0, 1));
+        //setBackground(new Color(51, 71, 86));
+        setBackground(new Color(83, 184, 187));
         //construct preComponents
         String[] jcomp8Items = {"MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY"};
         //construct components
         
         jcomp3 = new JLabel ("Starting Time:");
-        jcomp3.setForeground(new Color(255, 76, 41));
+        jcomp3.setForeground(new Color(0,0,0));
         jcomp3.setFont(new Font("Cambria", Font.PLAIN,23));
 
         jcomp4 = new JTextField ("00",5);
         jcomp4.setBackground(new Color(51, 71, 86));
-        jcomp4.setForeground(new Color(255, 76, 41));
+        jcomp4.setForeground(new Color(0,0,0));
 
         jcomp5 = new JLabel ("Duration :");
-        jcomp5.setForeground(new Color(255, 76, 41));
+        jcomp5.setForeground(new Color(0,0,0));
         jcomp5.setFont(new Font("Cambria", Font.PLAIN,23));
 
         jcomp6 = new JTextField ("00",5);
         jcomp6.setBackground(new Color(51, 71, 86));
-        jcomp6.setForeground(new Color(255, 76, 41));
+        jcomp6.setForeground(new Color(0,0,0));
 
         jcomp7 = new JLabel ("Day :");
-        jcomp7.setForeground(new Color(255, 76, 41));
+        jcomp7.setForeground(new Color(0,0,0));
         jcomp7.setFont(new Font("Cambria", Font.PLAIN,23));
 
         jcomp8 = new JComboBox<String> (jcomp8Items);
         jcomp8.setBackground(new Color(51, 71, 86));
-        jcomp8.setForeground(new Color(255, 76, 41));
+        jcomp8.setForeground(new Color(0,0,0));
 
         jcomp9 = new JLabel ("Do You Want To Start This Day");
-        jcomp9.setForeground(new Color(255, 76, 41));
+        jcomp9.setForeground(new Color(0,0,0));
         jcomp9.setFont(new Font("Cambria", Font.PLAIN,23));
 
         jcomp10 = new JButton ("Yes");
         jcomp10.setFont(new Font("Cambria", Font.PLAIN,23));
         jcomp10.setBackground(new Color(44, 57, 75));
-        jcomp10.setForeground(new Color(255, 76, 41));
+        jcomp10.setForeground(new Color(0,0,0));
 
         jcomp11 = new JButton ("Close");
         jcomp11.setFont(new Font("Cambria", Font.PLAIN,23));
         jcomp11.setBackground(new Color(44, 57, 75));
-        jcomp11.setForeground(new Color(255, 76, 41));
+        jcomp11.setForeground(new Color(0,0,0));
 
         jcomp12 = new JTextField ("00",5);
         jcomp12.setBackground(new Color(51, 71, 86));
-        jcomp12.setForeground(new Color(255, 76, 41));
+        jcomp12.setForeground(new Color(0,0,0));
 
         jcomp13 = new JTextField ("00",5);
         jcomp13.setBackground(new Color(51, 71, 86));
-        jcomp13.setForeground(new Color(255, 76, 41));
+        jcomp13.setForeground(new Color(0,0,0));
        
         //set components properties
         jcomp3.setToolTipText ("When you are starting the day");
@@ -181,10 +181,11 @@ public class page2 extends JPanel implements ActionListener
 
         sideBar.setPreferredSize (new Dimension (200, 636));
         sideBar.setBackground(new Color(44, 57, 75));
+        //44, 57, 75
         sideBar.setBounds(0,0,200, 636);
         sideBar.setLayout(new BorderLayout());
         JLabel icon = new JLabel(new ImageIcon("Pictures\\icon.png"));
-        sideBar.add(icon,BorderLayout.CENTER);
+        sideBar.add(icon,BorderLayout.NORTH);
 
 
         secondframe.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
