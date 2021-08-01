@@ -7,7 +7,8 @@ import java.awt.Font;
 
 public class page2 extends JPanel implements ActionListener
 {
-    static JFrame secondframe = new JFrame ("Scheduler");
+    static int counter = 0;
+    static JFrame secondframe = new JFrame ("Second Frame");
     static JPanel topBar = new JPanel();
     static JPanel sideBar = new JPanel();
     static private JLabel jcomp1;
@@ -134,7 +135,15 @@ public class page2 extends JPanel implements ActionListener
     {
         if(e.getActionCommand().equals("Yes"))
         {
-            page3.create();
+            if(counter == 0)
+            {
+                page3.create();
+                counter = 1;
+            }
+            else
+            {
+                page3.thirdframe.setVisible(true);
+            }
             secondframe.setVisible (false);
             compile.startingHour = Integer.parseInt(jcomp4.getText());
             compile.startingMin = Integer.parseInt(jcomp12.getText());
@@ -189,8 +198,5 @@ public class page2 extends JPanel implements ActionListener
         secondframe.getContentPane().add (new page2());
         secondframe.setLocationRelativeTo(null);
         secondframe.setVisible (true);
-
-
-        
     }
 }

@@ -3,6 +3,7 @@ import java.awt.*;
 import javax.swing.*;
 
 public class page5 extends JPanel {
+    
     private JLabel jcomp1;
     private JLabel jcomp2;
     private JButton jcomp3;
