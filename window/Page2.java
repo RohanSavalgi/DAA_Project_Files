@@ -79,7 +79,7 @@ public class page2 extends JPanel implements ActionListener
         jcomp13 = new JTextField ("00",5);
         jcomp13.setBackground(new Color(51, 71, 86));
         jcomp13.setForeground(new Color(0,0,0));
-       
+
         //set components properties
         jcomp3.setToolTipText ("When you are starting the day");
         jcomp5.setToolTipText ("For the Entire day");
@@ -91,7 +91,6 @@ public class page2 extends JPanel implements ActionListener
 
         //adjust size and set layout
         setPreferredSize (new Dimension (600, 616));
-        
         setLayout (null);
 
         //add components
