@@ -153,6 +153,7 @@ public class page4 extends JPanel implements ActionListener
             page4.fourframe.setVisible(false);
             page2.secondframe.setVisible(true);
         }
+        
     }
 
     static void firstTimeCreate()
