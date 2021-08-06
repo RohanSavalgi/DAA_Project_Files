@@ -180,5 +180,13 @@ public class mainprocess
         }
         remainingEvents.removeAllElements();
         event.eventsCounter = 0;
+        System.out.println("///////////////////////////////////////////////////////");
+        for(Vector<event> i : eventsStorage.week)
+        {
+            for(event j : i)
+            {
+                j.displayData();
+            }
+        }
     }
 }

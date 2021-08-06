@@ -118,6 +118,7 @@ public class page4 extends JPanel implements ActionListener
 
         jcomp8.addActionListener(this);
         jcomp9.addActionListener(this);
+        jcomp7.addActionListener(this);
     }
 
     public void actionPerformed(ActionEvent e)
@@ -140,6 +141,7 @@ public class page4 extends JPanel implements ActionListener
                 FinalBuild.BackEnd.event.getStartingTime();
             }
             thisEvent.collectData(thisEvent);
+            thisEvent.day = FinalBuild.FrontEnd.compile.day;
             FinalBuild.BackEnd.mainprocess.singleDay.addElement(thisEvent);
             
             jcomp10.setText("00");
@@ -153,7 +155,11 @@ public class page4 extends JPanel implements ActionListener
             page4.fourframe.setVisible(false);
             page2.secondframe.setVisible(true);
         }
-        
+        if(e.getActionCommand().equals("View"))
+        {
+            FinalBuild.BackEnd.mainprocess.processingAfterInputs();
+            FinalBuild.FrontEnd.page5.create();
+        }
     }
 
     static void firstTimeCreate()

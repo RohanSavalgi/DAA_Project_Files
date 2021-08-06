@@ -36,7 +36,7 @@ public class page5 extends JPanel implements ActionListener
     	setBackground(new Color(255, 160, 160));
         //setBackground(new Color(51, 71, 86));
         //construct preComponents
-        String[] jcomp6Items = {"Most Important", "Intermediate", "Least Impotant"};
+        //String[] jcomp6Items = {"Most Important", "Intermediate", "Least Impotant"};
         //construct components
         jcomp8 = new JButton ("Next");
         jcomp8.setFont(new Font("Cambria", Font.PLAIN,23));
@@ -86,7 +86,7 @@ public class page5 extends JPanel implements ActionListener
         counter = 1;
     }
 
-    public static void main(String[] args)
+    public void create()
     {
         topBar.setPreferredSize (new Dimension (900,50));
         topBar.setBackground(new Color(10, 25, 49));

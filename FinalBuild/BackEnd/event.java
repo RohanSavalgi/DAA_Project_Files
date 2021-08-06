@@ -5,6 +5,7 @@ public class event
 {
     static String eventDay;
     int flag;
+    public String day;
     String name;
     int duration;
     static int mhh,mmm; 
@@ -37,7 +38,7 @@ public class event
         priorityBucket.priorityBucketSelector(thisEvent);
         minuteConvertor();
     }
-    void displayData()
+    public void displayData()
     {
         System.out.println("\nThe Event detail are : ");
         System.out.println("Name : " + name);

@@ -19,7 +19,7 @@ public class eventsFill
                 break;
             }
             setTimings(currentEvent);
-            currentEvent.displayData();
+            //currentEvent.displayData();
  
             if(currentDuration + currentEvent.duration <= event.mainDuration)
             {
