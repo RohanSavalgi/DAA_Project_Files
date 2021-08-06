@@ -61,7 +61,7 @@ public class page4 extends JPanel implements ActionListener
         jcomp6.setBackground(new Color(162, 219, 250));
         jcomp6.setForeground(new Color(0,0,0));
 
-        jcomp7 = new JButton ("View");
+        jcomp7 = new JButton ("Generate");
         jcomp7.setFont(new Font("Cambria", Font.PLAIN,23));
         jcomp7.setBackground(new Color(162, 219, 250));
         jcomp7.setForeground(new Color(0,0,0));
@@ -83,7 +83,7 @@ public class page4 extends JPanel implements ActionListener
         jcomp9.setToolTipText ("Return to starting page");
         jcomp10.setToolTipText ("Minutes");
 
-        JLabel mylogo = new JLabel(new ImageIcon("C:\\Users\\dhanyata\\Downloads\\Logo-05.png"));
+        JLabel mylogo = new JLabel(new ImageIcon("Pictures\\Logo-05.png"));
         add(mylogo);
         
         //adjust size and set layout
@@ -110,9 +110,9 @@ public class page4 extends JPanel implements ActionListener
         jcomp10.setBounds (390, 150, 50, 25);
         jcomp5.setBounds (55, 220, 200, 25);
         jcomp6.setBounds (330, 220, 160, 25);
-        jcomp7.setBounds (55 , 400 , 100, 50);
-        jcomp8.setBounds (200 ,400, 100, 50);
-        jcomp9.setBounds (345 , 400, 150, 50);
+        jcomp7.setBounds (395, 400 , 160, 50);//55
+        jcomp8.setBounds (250 ,400, 100, 50);
+        jcomp9.setBounds (55 , 400, 150, 50);
         
         mylogo.setBounds(580,470,150,150);
 
@@ -155,7 +155,7 @@ public class page4 extends JPanel implements ActionListener
             page4.fourframe.setVisible(false);
             page2.secondframe.setVisible(true);
         }
-        if(e.getActionCommand().equals("View"))
+        if(e.getActionCommand().equals("Generate"))
         {
             FinalBuild.BackEnd.mainprocess.processingAfterInputs();
             FinalBuild.FrontEnd.page5.create();
@@ -183,12 +183,12 @@ public class page4 extends JPanel implements ActionListener
         sideBar.setBackground(new Color(196, 182, 182));
         sideBar.setBounds(0,0,200, 636);
         sideBar.setLayout(new BorderLayout());
-        JLabel icon = new JLabel(new ImageIcon("C:\\Users\\dhanyata\\Desktop\\Rakshita S\\Mini Project\\icon.png"));
+        JLabel icon = new JLabel(new ImageIcon("Pictures\\icon.png"));
         sideBar.add(icon,BorderLayout.NORTH);
         
 
         fourframe.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
-        fourframe.setContentPane(new JLabel(new ImageIcon("Pictures\\New.jpg")));
+        fourframe.setContentPane(new JLabel(new ImageIcon("Pictures\\Logo-05.png")));
         if(counter == 0)
         {
             firstTimeCreate();

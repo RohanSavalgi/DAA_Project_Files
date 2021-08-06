@@ -2,15 +2,15 @@ package FinalBuild.FrontEnd;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.text.SimpleDateFormat;
 
 import FinalBuild.BackEnd.event;
-
 import java.awt.geom.RoundRectangle2D;
-import java.util.Vector;
 
 public class page5 extends JPanel implements ActionListener
 {
     static int counter = 0; 
+    static SimpleDateFormat commonDateFormat = new SimpleDateFormat("hh:mm a");
     static public JLabel jcomp0 = new JLabel ("Calendar");
     static JFrame fiveframe= new JFrame ("Fourth Frame");
     static JPanel topBar = new JPanel();
@@ -33,6 +33,16 @@ public class page5 extends JPanel implements ActionListener
     static int saturdayBox = 110;
     static int sundayBox = 100;
 
+    final static int gap = 60;
+
+    static int mondayGap = 0;
+    static int tuesdayGap = 0;
+    static int wednesdayGap = 0;
+    static int thursdayGap = 0;
+    static int fridayGap = 0;
+    static int saturdayGap = 0;
+    static int sundayGap = 0;
+
     static public JPanel timeTable = new JPanel();
 
     public page5() 
@@ -42,7 +52,7 @@ public class page5 extends JPanel implements ActionListener
         //construct preComponents
         //String[] jcomp6Items = {"Most Important", "Intermediate", "Least Impotant"};
         //construct components
-        jcomp8 = new JButton ("Next");
+        jcomp8 = new JButton ("Exit");
         jcomp8.setFont(new Font("Cambria", Font.PLAIN,23));
         jcomp8.setBackground(new Color(162, 219, 250));
         jcomp8.setForeground(new Color(0,0,0));
@@ -64,7 +74,7 @@ public class page5 extends JPanel implements ActionListener
 
         //set component bounds (only needed by Absolute Positioning)
         jcomp8.setBounds (550 ,520, 100, 50);
-        jcomp9.setBounds (10 , 520, 150, 50);
+        jcomp9.setBounds (210 , 520, 150, 50);
         
         mylogo.setBounds(580,470,150,150);
 
@@ -77,6 +87,8 @@ public class page5 extends JPanel implements ActionListener
         if(e.getActionCommand().equals("Exit"))
         {
             fiveframe.dispose();
+            FinalBuild.FrontEnd.page4.fourframe.dispose();
+            FinalBuild.FrontEnd.page2.secondframe.dispose();
         }
         if(e.getActionCommand().equals("Return"))
         {
@@ -98,8 +110,35 @@ public class page5 extends JPanel implements ActionListener
         page5.timeTable.add(event);
         switch(eve.day)
         {
-            case "MONDAY" : event.setBounds(mondayX,60,mondayBox,50);
+            case "MONDAY" : event.setBounds(mondayX,mondayGap + 60,mondayBox,50);
+            mondayGap += gap;
+            break;
+            case "TUESDAY" : event.setBounds(tuesdayX,tuesdayGap + 60,tuesdayBox,50);
+            tuesdayGap += gap;
+            break;
+            case "WEDNESDAY" : event.setBounds( wednesdayX,wednesdayGap +60,wednesdayBox,50);
+            wednesdayGap += gap;
+            break;
+            case "THURSDAY" : event.setBounds(thursdayX,thursdayGap + 60,thursdayBox,50);
+            thursdayGap += gap;
+            break;
+            case "FRIDAY" : event.setBounds(fridayX,fridayGap + 60,fridayBox,50);
+            fridayGap += gap;
+            break;
+            case "SATURDAY" : event.setBounds(saturdayX,saturdayGap + 60,saturdayBox,50);
+            saturdayGap += gap;
+            break;
+            case "SUNDAY" : event.setBounds(sundayX,sundayGap + 60,sundayBox,50);
+            sundayGap+= gap;
+            break;
         }
+        JLabel nameOfEvent = new JLabel(eve.name);
+        event.add(nameOfEvent);
+        String startingTime = String.valueOf(commonDateFormat.format(eve.eventStartTime.getTime()));
+        JLabel startingTimeLabel = new JLabel(startingTime);
+        startingTimeLabel.setFont(new Font("Cambria", Font.BOLD,15));
+        nameOfEvent.setFont(new Font("Cambria", Font.BOLD,18));
+        event.add(startingTimeLabel);
     }
 
     static public void create()
@@ -150,22 +189,16 @@ public class page5 extends JPanel implements ActionListener
         sunday.setBounds(758, 28, 92,23);
 
         System.out.println("Storage//////////////////////////////");
-        for(Vector<event> i : FinalBuild.BackEnd.eventsStorage.week)
-        {
-            for(event j : i)
-            {
-                j.displayData();
-            }
-        }
+        // for(event i : FinalBuild.BackEnd.eventsStorage.week)
+        // {
+        //     i.displayData();
+        // }
 
-        for(Vector<event> i : FinalBuild.BackEnd.eventsStorage.week)
+        for(event i : FinalBuild.BackEnd.eventsStorage.week)
         {
-            for(event j : i)
-            {
-                createPanelForEvent(j);
-            }
+            createPanelForEvent(i);
         }
-
+        FinalBuild.BackEnd.eventsStorage.week.removeAllElements();
 
         // monday.setBounds(28, 28, 92,23);
         // tuesday.setBounds(145, 28, 92,23);

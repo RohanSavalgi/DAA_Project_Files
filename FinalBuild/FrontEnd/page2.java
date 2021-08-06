@@ -80,7 +80,7 @@ public class page2 extends JPanel implements ActionListener
         jcomp13.setBackground(new Color(162, 219, 250));
         jcomp13.setForeground(new Color(0,0,0));
         
-        JLabel mylogo = new JLabel(new ImageIcon("C:\\Users\\dhanyata\\Downloads\\Logo-05.png"));
+        JLabel mylogo = new JLabel(new ImageIcon("Pictures\\Logo-05.png"));
         add(mylogo);
         
         
@@ -198,7 +198,7 @@ public class page2 extends JPanel implements ActionListener
         //44, 57, 75
         sideBar.setBounds(0,0,200, 636);
         sideBar.setLayout(new BorderLayout());
-        JLabel icon = new JLabel(new ImageIcon("C:\\Users\\dhanyata\\Desktop\\Rakshita S\\Mini Project\\icon.png"));
+        JLabel icon = new JLabel(new ImageIcon("Pictures\\icon.png"));
         sideBar.add(icon,BorderLayout.NORTH);
 
 
@@ -206,7 +206,7 @@ public class page2 extends JPanel implements ActionListener
         secondframe.setSize(900,636);
         secondframe.setUndecorated(true);
         secondframe.setShape(new RoundRectangle2D.Double(0,0, 900,636, 30,30));
-        secondframe.setContentPane(new JLabel(new ImageIcon("Pictures\\New.jpg")));
+        secondframe.setContentPane(new JLabel(new ImageIcon("Pictures\\Logo-05.png")));
       
         secondframe.setLayout(new BorderLayout());
         secondframe.add(topBar,BorderLayout.NORTH);

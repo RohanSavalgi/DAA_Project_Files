@@ -6,8 +6,8 @@ public class event
     static String eventDay;
     int flag;
     public String day;
-    String name;
-    int duration;
+    public String name;//
+    public int duration;//
     static int mhh,mmm; 
     static int mainDuration;
     int dhh,dmm;
@@ -16,7 +16,7 @@ public class event
     public static int eventsCounter = 0;
     double ratio;
     static Calendar startTime = Calendar.getInstance();
-    Calendar eventStartTime = Calendar.getInstance();
+    public Calendar eventStartTime = Calendar.getInstance();
     SimpleDateFormat commonDateFormat = new SimpleDateFormat("hh:mm a");
 
     public event()

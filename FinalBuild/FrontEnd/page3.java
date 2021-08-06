@@ -46,7 +46,7 @@ public class page3 extends JPanel implements ActionListener
         //set components properties
         jcomp5.setToolTipText ("Press here to view whole day (all events)");
         
-        JLabel mylogo = new JLabel(new ImageIcon("C:\\Users\\dhanyata\\Downloads\\Logo-05.png"));
+        JLabel mylogo = new JLabel(new ImageIcon("Pictures\\Logo-05.png"));
         add(mylogo);
         
 
@@ -64,8 +64,8 @@ public class page3 extends JPanel implements ActionListener
         //set component bounds (only needed by Absolute Positioning)
         jcomp1.setBounds (180, 10, 200, 30);
         jcomp2.setBounds (95, 150, 450, 25);
-        jcomp10.setBounds (95 , 200, 100, 50);
-        jcomp11.setBounds (205 , 200, 100, 50);
+        jcomp10.setBounds (110 , 200, 100, 50);
+        jcomp11.setBounds (275 , 200, 100, 50);
         jcomp5.setBounds (605, 355, 100, 25);
         mylogo.setBounds(580,470,150,150);
 
@@ -100,7 +100,7 @@ public class page3 extends JPanel implements ActionListener
         sideBar.setBackground(new Color(196, 182, 182));
         sideBar.setBounds(0,0,200, 636);
         sideBar.setLayout(new BorderLayout());
-        JLabel icon = new JLabel(new ImageIcon("C:\\Users\\dhanyata\\Desktop\\Rakshita S\\Mini Project\\icon.png"));
+        JLabel icon = new JLabel(new ImageIcon("Pictures\\icon.png"));
         sideBar.add(icon,BorderLayout.NORTH);
         
 
@@ -109,7 +109,7 @@ public class page3 extends JPanel implements ActionListener
         thirdframe.setUndecorated(true);
         thirdframe.setShape(new RoundRectangle2D.Double(0,0, 900,636, 30,30));
         thirdframe.setLocationRelativeTo(page2.secondframe);
-        thirdframe.setContentPane(new JLabel(new ImageIcon("Pictures\\New.jpg")));
+        thirdframe.setContentPane(new JLabel(new ImageIcon("Pictures\\Logo-05.png")));
         thirdframe.setLayout(new BorderLayout());
         thirdframe.getContentPane().add (new page3());
         thirdframe.setLocationRelativeTo(null);
