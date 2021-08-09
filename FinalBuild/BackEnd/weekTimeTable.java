@@ -1,5 +1,5 @@
 package FinalBuild.BackEnd;
-import java.util.*;
+//import java.util.*;
 public class weekTimeTable 
 {
     static void multipleDay()
@@ -7,11 +7,12 @@ public class weekTimeTable
         try
         {
             char yesNoDay;
-            Scanner mainKeyboard = new Scanner(System.in);
+            //Scanner mainKeyboard = new Scanner(System.in);
             //priorityBucket.mainPriority = 1;
             mainprocess.singleDayBlock();
             System.out.println("Do you wish continue to the next day : (Y/N)");
-            yesNoDay = mainKeyboard.next().charAt(0);
+            //yesNoDay = mainKeyboard.next().charAt(0);
+            yesNoDay = 'Y';
             
             if(yesNoDay == 'Y')
             {
@@ -19,7 +20,7 @@ public class weekTimeTable
                 {
                     mainprocess.singleDayBlock();     
                     System.out.println("Do you wish continue to the next day : (Y/N)");
-                    yesNoDay = mainKeyboard.next().charAt(0);                  
+                    //yesNoDay = mainKeyboard.next().charAt(0);                  
                 }
             }
         }

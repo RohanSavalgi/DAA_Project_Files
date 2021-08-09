@@ -1,6 +1,10 @@
-import javax.swing.*;
-import java.awt.*;
-class page1 extends JFrame
+import java.awt.*; 
+import java.awt.event.*;
+import javax.swing.*;  
+import java.awt.geom.RoundRectangle2D;
+import java.awt.Font;
+
+class page1 extends JFrame implements ActionListener
 {
 	JButton b1;
 	JLabel l1;
@@ -18,6 +22,17 @@ class page1 extends JFrame
 		
 		setSize(1000,636);
 		setSize(900,636);
+
+		int delay = 10000; 
+
+		Timer timer = new Timer(delay, new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				frameB.setVisible(true); 
+				setVisible(false); 
+			}
+		});
+		timer.start();
 	}
 	public static void main(String args[])
 	{
