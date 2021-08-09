@@ -7,10 +7,7 @@ public class mainprocess
     
     public static void singleDayBlock()
     {
-        Scanner keyboard = new Scanner(System.in);
         char yesNoChoice = 'Y';
-        //System.out.println("Do you wish to add an Event : (Y/N)");
-        //yesNoChoice = keyboard.next().charAt(0);
         if(yesNoChoice == 'N')
         {
             if(mainprocess.singleDay.size() != 0)
@@ -26,7 +23,6 @@ public class mainprocess
         {
             
             System.out.println("Do you wish to add an Event : (Y/N)");
-            yesNoChoice = keyboard.next().charAt(0);  
         }
         processingAfterInputs();
     }

@@ -5,9 +5,6 @@ import java.awt.geom.RoundRectangle2D;
 
 class page1 extends JFrame
 {
-	JButton b1;
-	JLabel l1;
-	JLabel calender;
 	public page1()
 	{
 		setTitle("Background Color for JFrame");
@@ -17,7 +14,7 @@ class page1 extends JFrame
 		setVisible(true);
 		setLayout(new BorderLayout());
 		setContentPane(new JLabel(new ImageIcon("Pictures\\900_636.jpeg")));
-		setLayout(new FlowLayout());
+		setLayout(null);
 		
 		setSize(1000,636);
 		setSize(900,636);
@@ -28,6 +25,5 @@ class page1 extends JFrame
 	public static void main(String args[])
 	{
 		new page1();
-		
 	}
 }

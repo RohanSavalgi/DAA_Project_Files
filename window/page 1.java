@@ -1,6 +1,6 @@
+package window;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 class page1 extends JFrame
 {
 JButton b1;
@@ -17,7 +17,7 @@ JLabel calender;
 		setContentPane(new JLabel(new ImageIcon("C:\\Users\\dhanyata\\Desktop\\Rakshita S\\Mini Project\\900_636.jpeg")));
 		setLayout(new FlowLayout());
 		
-	setSize(1000,636);
+		setSize(1000,636);
 		setSize(900,636);
 	}
 	public static void main(String args[])

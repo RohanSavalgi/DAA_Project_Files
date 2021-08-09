@@ -192,63 +192,12 @@ public class page5 extends JPanel implements ActionListener
         saturday.setBounds(633, 28, 92,23);
         sunday.setBounds(758, 28, 92,23);
 
-        System.out.println("Storage//////////////////////////////");
-        // for(event i : FinalBuild.BackEnd.eventsStorage.week)
-        // {
-        //     i.displayData();
-        // }
-
+        System.out.println("Storage : ");
         for(event i : FinalBuild.BackEnd.eventsStorage.week)
         {
             createPanelForEvent(i);
         }
         FinalBuild.BackEnd.eventsStorage.week.removeAllElements();
-
-        // monday.setBounds(28, 28, 92,23);
-        // tuesday.setBounds(145, 28, 92,23);
-        // wednesday.setBounds(262, 28,102,23);
-        // thursday.setBounds(400, 28, 92,23);
-        // friday.setBounds(526, 28, 92,23);
-        // saturday.setBounds(633, 28, 92,23);
-        // sunday.setBounds(758, 28, 92,23);
-
-        // JPanel event1 = new JPanel();
-        // event1.setBackground(new Color(162, 219, 250)); 
-
-        // JPanel event2 = new JPanel();
-        // event2.setBackground(new Color(162, 219, 250)); 
-
-        // JPanel event3 = new JPanel();
-        // event3.setBackground(new Color(162, 219, 250)); 
-
-        // JPanel event4 = new JPanel();
-        // event4.setBackground(new Color(162, 219, 250)); 
-
-        // JPanel event5 = new JPanel();
-        // event5.setBackground(new Color(162, 219, 250)); 
-
-        // JPanel event6 = new JPanel();
-        // event6.setBackground(new Color(162, 219, 250)); 
-
-        // JPanel event7 = new JPanel();
-        // event7.setBackground(new Color(162, 219, 250)); 
-
-
-        // page5.timeTable.add(event1);
-        // page5.timeTable.add(event2);
-        // page5.timeTable.add(event3);
-        // page5.timeTable.add(event4);
-        // page5.timeTable.add(event5);
-        // page5.timeTable.add(event6);
-        // page5.timeTable.add(event7);
-
-        // event1.setBounds(mondayX,60,mondayBox,50);
-        // event2.setBounds(tuesdayX,60,tuesdayBox,50);
-        // event3.setBounds(wednesdayX,60,wednesdayBox,50);
-        // event4.setBounds(thursdayX,60,thursdayBox,50);
-        // event5.setBounds(fridayX,60,fridayBox,50);
-        // event6.setBounds(saturdayX,60,saturdayBox,50);
-        // event7.setBounds(sundayX,60,sundayBox,50);
 
         fiveframe.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
         fiveframe.setContentPane(new JLabel(new ImageIcon("Pictures\\New.jpg")));

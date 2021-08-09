@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 import java.awt.*;
 class page1 extends JFrame
