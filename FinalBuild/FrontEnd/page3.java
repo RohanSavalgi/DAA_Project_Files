@@ -102,7 +102,6 @@ public class page3 extends JPanel implements ActionListener
         sideBar.setLayout(new BorderLayout());
         JLabel icon = new JLabel(new ImageIcon("Pictures\\icon.png"));
         sideBar.add(icon,BorderLayout.NORTH);
-        
 
         thirdframe.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
         thirdframe.setSize(900,636);

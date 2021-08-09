@@ -135,6 +135,11 @@ public class page4 extends JPanel implements ActionListener
             // System.out.println(compile.dmEvent);
             // System.out.println(compile.bucket);
 
+            for(FinalBuild.BackEnd.event i : FinalBuild.BackEnd.mainprocess.singleDay)
+            {
+                i.day = FinalBuild.FrontEnd.compile.day;
+            }
+
             FinalBuild.BackEnd.event thisEvent = new FinalBuild.BackEnd.event();
             if(FinalBuild.BackEnd.event.eventsCounter == 1)
             {

@@ -105,6 +105,7 @@ public class mainprocess
             if(i.flag == 0)
             {
                 i.proirity = 0;
+                i.day = null;
                 remainingEvents.addElement(i);
             }
         }

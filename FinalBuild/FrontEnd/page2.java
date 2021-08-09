@@ -82,8 +82,6 @@ public class page2 extends JPanel implements ActionListener
         
         JLabel mylogo = new JLabel(new ImageIcon("Pictures\\Logo-05.png"));
         add(mylogo);
-        
-        
        
         //set components properties
         jcomp3.setToolTipText ("When you are starting the day");
@@ -179,6 +177,8 @@ public class page2 extends JPanel implements ActionListener
         if(e.getActionCommand().equals("Close"))
         {
             secondframe.dispose();
+            page3.thirdframe.dispose();
+            page4.fourframe.dispose();
         }
     }
     static void page2create()

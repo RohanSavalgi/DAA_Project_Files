@@ -16,6 +16,7 @@ public class page5 extends JPanel implements ActionListener
     static JPanel topBar = new JPanel();
     private JButton jcomp8;
     private JButton jcomp9;
+    private JLabel disclamer;
 
     static int mondayX = 10;
     static int tuesdayX = 135;
@@ -62,8 +63,11 @@ public class page5 extends JPanel implements ActionListener
         jcomp9.setBackground(new Color(162, 219, 250));
         jcomp9.setForeground(new Color(0,0,0));
 
-        JLabel mylogo = new JLabel(new ImageIcon("C:\\Users\\dhanyata\\Downloads\\Logo-05.png"));
-        add(mylogo);
+        disclamer = new JLabel();
+        disclamer.setText("i");
+        disclamer.setFont(new Font("Cambria", Font.ITALIC,30));
+        disclamer.setToolTipText("The events that exceed the total duration will be moved to the next day");
+
         
         //adjust size and set layout
         setPreferredSize (new Dimension (750, 450));
@@ -71,12 +75,12 @@ public class page5 extends JPanel implements ActionListener
 
         add (jcomp8);
         add (jcomp9);
+        add (disclamer);
 
         //set component bounds (only needed by Absolute Positioning)
         jcomp8.setBounds (550 ,520, 100, 50);
         jcomp9.setBounds (210 , 520, 150, 50);
-        
-        mylogo.setBounds(580,470,150,150);
+        disclamer.setBounds(870 ,520, 30, 30);
 
         jcomp8.addActionListener(this);
         jcomp9.addActionListener(this);
